@@ -1,31 +1,103 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app='app'>
   <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <style>
-      .message { font-size: 1.3em; font-weight: bold; }
-    </style>
-    <script src="angular.min.js"></script>
+    <meta charset="utf-8">
+    <script src="lib/angular.min.js"></script>
     <script src="app.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Heavy ball finder</title>
   </head>
-  <body ng-app="LunchCheck">
-    <div class="container" ng-controller="LunchCheckController">
-      <h1>Lunch Checker</h1>
-      <div class="form-group">
-        <input id="lunch-menu" type="text" ng-model="foodList"
-        placeholder="list comma separated dishes you usually have for lunch"
-        class="form-control">
+  <body ng-controller="ctrl as ctrl">
+    <div class="container">
+      <p>Salma âgée de 6 mois et demi est amenée aux urgences pour diarrhée liquidienne et vomissements depuis 3 jours. Elle pesait 7 Kg il ya une semaine (lors du vaccin). Elle est allaitée au sein , la diversification a été commencée à 6 mois. À noter que sa sœur avait les mêmes symptômes il ya quelques jours.</p>
+
+      À l’examen: poids: 6,5 Kg
+      <ul>
+        <li>
+        Éveillée, asthénique, Température: 38,9°C
+        </li>
+        <li>
+        Pli cutané paresseux
+        </li>
+        <li>
+        Fontanelle antérieure légèrement  déprimée
+        </li>
+        <li>
+        Fréquence respiratoire: 46 cycles/minute, râles ronflants.
+        </li>
+        <li>
+        Cernes oculaires
+        </li>
+        <li>
+        Fréquence cardiaque: 110 bpm, TRC< 3 sec
+        </li>
+        <li>
+        Muqueuses humides
+        </li>
+        <li>
+        Rhinorrhée claire, tympans congestifs
+        </li>
+        <li>
+        Bandelettes urinaires: pH: 5, P, H,L, N, G (-), A (+) densité: 1030 
+        </li>
+        <li>
+        Érythème fessier
+        </li>
+        <li>
+        Le reste de l’examen est sans particularité
+        </li>
+
+      </ul>
+      <h1>INSTRUCTIONS</h1>
+      <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
+      <div>
+        Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
       </div>
-      <div class="form-group">
-        <button class="btn btn-default" ng-click="checkFood()">Check If Too Much</button>
+      <div>
+        <p>L’échelle de cotation est la suivante :</p>
+        <ul>
+          <li>
+            (-2) choix dangereux ou inutilement couteux
+          </li>
+          <li>
+            (-1) choix non dangereux mais inutile
+          </li>
+          <li>
+            (0) choix indifférent
+          </li>
+          <li>
+            (+1) choix utile
+          </li>
+          <li>
+            (+2) choix essentiel
+          </li>
+        </ul>
       </div>
-      <div class="form-group message">
-      {{message}}
-      </div>
+      <p>Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
     </div>
+
+    <div class="container">
+      <div style="width:50%;float:left">
+        <ul>
+          <li ng-repeat="item in ctrl.list">
+            <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item)">{{item.label}}</a>
+          </li>
+          </ul>
+      </div>
+      <div style="width:50%;float:left">
+        <div>
+          <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
+          <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+        </div>
+        <div ng-show="ctrl.showResult">
+          <h2>NOTE FINALE</h2>
+        </div>
+        <div ng-show="ctrl.showResult"><h2>{{ctrl.note}}</h2></div>
+      </div>
+      <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+    </div> 
+      
 
   </body>
 </html>
