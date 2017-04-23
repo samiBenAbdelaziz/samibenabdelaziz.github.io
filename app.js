@@ -213,6 +213,7 @@
     ];
 
     ctrl.showTest = function(test){
+      ctrl.selectedTestId = test;
       if (ctrl.candidate){
         ctrl.noname = false;
         ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+test;
@@ -235,8 +236,7 @@
         ctrl.selectedItem = item;
         item.clicked = true;
         ctrl.note += item.note;
-        ctrl[list].note = ctrl.note;
-        localStorage[ctrl.candidate] = JSON.stringify(ctrl[list]);
+        localStorage[ctrl.candidate] = JSON.stringify({ reponse: ctrl[list], note: ctrl.note});
         if (item.note === 0){
           ctrl.note = 0;
           ctrl.fin();
@@ -249,7 +249,7 @@
     ctrl.fin = function(){
       ctrl.showResult = true;
       ctrl.end = true;
-      $state.go('home.correction', {test:1});
+      $state.go('home.correction', {test:ctrl.selectedTestId});
     }
   })
   .controller('correction', function($state){
@@ -425,9 +425,11 @@
     delete recap.listCandidats.length;
     console.log(recap.listCandidats);
     for (var candidat in recap.listCandidats){
-      recap.candidats[candidat] = {reponses: recap.listCandidats[candidat].filter(function(rep){
+      recap.candidats[candidat] = {reponses: recap.listCandidats[candidat].reponse.filter(function(rep){
         return rep.clicked;
-      })}
+      })};
+      recap.candidats[candidat].note = recap.listCandidats[candidat].note;
+      recap.candidats[candidat].nom = candidat.replace(/_/g, ' ');
     }
   })
 })();

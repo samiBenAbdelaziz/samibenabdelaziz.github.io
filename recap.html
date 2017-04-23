@@ -1,8 +1,9 @@
 <div class="container">
 	<div ng-repeat="candidat in recap.candidats">
+		<h4>Candidat: {{candidat.nom}}</h4>
+		<h4>note globale: {{candidat.note}}</h4>
 		<div ng-repeat="reponse in candidat.reponses">
 			{{reponse.label}}
 		</div>
-		<h4>note globale: {{candidat.note}}</h4>
 	</div>
 </div>
