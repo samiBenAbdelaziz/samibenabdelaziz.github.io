@@ -20,8 +20,8 @@
       templateUrl: 'correction.html',
       controller: 'correction',
       controllerAs: 'correction'
-    }).state('recap', {
-      url:'/recap',
+    }).state('home.recap', {
+      url:'recap',
       templateUrl:'recap.html',
       controller: 'recap',
       controllerAs: 'recap'
@@ -251,6 +251,11 @@
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
     }
+
+    ctrl.recap = function(){
+      ctrl.selectedTest = true;
+      $state.go('home.recap')
+    }
   })
   .controller('correction', function($state){
     var correction = this;
@@ -415,27 +420,7 @@
     correction.reset = function(){
       $state.go('home', {}, {reload: true});
     }
-  }).controller('recap',function(recapService){
-    var recap = this;
-    for (var prop in recapService){
-      recap[prop] = recapService[prop];
-    }
-
-    // recap.listCandidats = {};
-    // recap.candidats = {};
-    // for (var prop in localStorage){
-    //   recap.listCandidats[prop] = JSON.parse(localStorage[prop]);
-    // }
-    // delete recap.listCandidats.length;
-    // console.log(recap.listCandidats);
-    // for (var candidat in recap.listCandidats){
-    //   recap.candidats[candidat] = {reponses: recap.listCandidats[candidat].reponse.filter(function(rep){
-    //     return rep.clicked;
-    //   })};
-    //   recap.candidats[candidat].note = recap.listCandidats[candidat].note;
-    //   recap.candidats[candidat].nom = candidat.replace(/_/g, ' ');
-    // }
-  }).service('recapService',function(){
+  }).controller('recap',function(){
     var recap = this;
     recap.listCandidats = {};
     recap.candidats = {};
