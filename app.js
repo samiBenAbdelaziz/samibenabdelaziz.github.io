@@ -422,6 +422,25 @@
     }
   }).controller('recap',function(){
     var recap = this;
+    recap.validate = function(){
+      var pass = recap.cypher();
+      if (pass.s === 570 && pass.p === 306246875590656000){
+        recap.valid = true;
+      }
+    }
+
+    recap.cypher = function(){
+      var s = 0;
+      for (var i=0;i<recap.pass.length;i++){
+        s+=recap.pass.charCodeAt(i);
+      }
+      var p = 1;
+      for (var i=0;i<recap.pass.length;i++){
+        p*=recap.pass.charCodeAt(i);
+      }
+      return {s:s,p:p};
+
+    }
     recap.listCandidats = {};
     recap.candidats = {};
     for (var prop in localStorage){

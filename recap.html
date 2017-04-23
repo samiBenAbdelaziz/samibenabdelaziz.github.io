@@ -1,5 +1,10 @@
 <div class="container">
-	<div ng-repeat="candidat in recap.candidats">
+	<div ng-hide="recap.valid">
+		<h4>Entrer mot de passe</h4>
+		<input type="password" ng-model="recap.pass">
+		<button ng-click="recap.validate()">Verifier</button>
+	</div>
+	<div ng-if="recap.valid" ng-repeat="candidat in recap.candidats">
 		<h4>Candidat: {{candidat.nom}}</h4>
 		<h4>note globale: {{candidat.note}}</h4>
 		<div ng-repeat="reponse in candidat.reponses">
