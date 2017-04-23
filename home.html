@@ -1,0 +1,169 @@
+<div class="container" ng-hide="ctrl.selectedTest">
+  <div style="display: inline;margin: auto">
+    <h3>Saisissez votre nom:</h3>
+    <input type="text" ng-model="ctrl.candidate">
+    <p class="red" ng-show="ctrl.noname">Entrez votre nom d'abord</p>
+    <h3>Choisissez un cas</h3>
+    <button ng-click="ctrl.showTest(1)">CAS 1</button>
+    <button ng-click="ctrl.showTest(2)">CAS 2</button>
+  </div>
+</div>
+<div id="first" ng-if="ctrl.firstSelected">
+  <div class="container">
+    <p>Salma âgée de 6 mois et demi est amenée aux urgences pour diarrhée liquidienne et vomissements depuis 3 jours. Elle pesait 7 Kg il ya une semaine (lors du vaccin). Elle est allaitée au sein , la diversification a été commencée à 6 mois. À noter que sa sœur avait les mêmes symptômes il ya quelques jours.</p>
+
+    À l’examen: poids: 6,5 Kg
+    <ul>
+      <li>
+      Éveillée, asthénique, Température: 38,9°C
+      </li>
+      <li>
+      Pli cutané paresseux
+      </li>
+      <li>
+      Fontanelle antérieure légèrement  déprimée
+      </li>
+      <li>
+      Fréquence respiratoire: 46 cycles/minute, râles ronflants.
+      </li>
+      <li>
+      Cernes oculaires
+      </li>
+      <li>
+      Fréquence cardiaque: 110 bpm, TRC< 3 sec
+      </li>
+      <li>
+      Muqueuses humides
+      </li>
+      <li>
+      Rhinorrhée claire, tympans congestifs
+      </li>
+      <li>
+      Bandelettes urinaires: pH: 5, P, H,L, N, G (-), A (+) densité: 1030 
+      </li>
+      <li>
+      Érythème fessier
+      </li>
+      <li>
+      Le reste de l’examen est sans particularité
+      </li>
+
+    </ul>
+    <h1>INSTRUCTIONS</h1>
+    <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
+    <div>
+      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
+    </div>
+    <div>
+      <p>L’échelle de cotation est la suivante :</p>
+      <ul>
+        <li>
+          (-2) choix dangereux ou inutilement couteux
+        </li>
+        <li>
+          (-1) choix non dangereux mais inutile
+        </li>
+        <li>
+          (0) choix indifférent
+        </li>
+        <li>
+          (+1) choix utile
+        </li>
+        <li>
+          (+2) choix essentiel
+        </li>
+      </ul>
+    </div>
+    <p>Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
+  </div>
+
+  <div class="container">
+    <div style="width:50%;float:left">
+      <ul>
+        <li ng-repeat="item in ctrl.list">
+          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list')">{{item.label}}</a>
+        </li>
+        </ul>
+    </div>
+    <div style="width:50%;float:left">
+      <div>
+        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+      </div>
+      <div ng-show="ctrl.showResult">
+        <h2>NOTE FINALE</h2>
+      </div>
+      <div ng-show="ctrl.showResult"><h2>{{ctrl.note}}</h2></div>
+    </div>
+    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+  </div> 
+</div>
+<div id="second" ng-if="ctrl.secondSelected">
+  <div class="container">
+    <p>Anas, âgé de 4 jours est admis pour refus de téter apparu depuis 24 heures. Ses parents sont cousins. Il n’a pas d’antécédents familiaux particuliers. La grossesse était normale. Pas d’anamnèse infectieuse. L’accouchement était à terme, par voie basse, Apgar 8/10. PN: 3000g. L’examen avant la sortie de maternité était normal.</p>
+
+    A l’examen ce jour: ° température: 37°C
+    <ul>
+      <li>
+      Fréquence respiratoire à 70 c/mn, score de Silverman à 5, SpO2: 87%
+      </li>
+      <li>
+      Fréquence cardiaque 130/mn, TRC=2 ’’
+      </li>
+      <li>
+      NN comateux, hypotonie généralisée, FA normotendue, réflexes archaiques absents
+      </li>
+      <li>
+      Pas d’HMG,  Glycémie au talon: 0,3 g/l
+      </li>
+    </ul>
+    <h1>INSTRUCTIONS</h1>
+    <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
+    <div>
+      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
+    </div>
+    <div>
+      <p>L’échelle de cotation est la suivante :</p>
+      <ul>
+        <li>
+          (-2) choix dangereux ou inutilement couteux
+        </li>
+        <li>
+          (-1) choix non dangereux mais inutile
+        </li>
+        <li>
+          (0) choix indifférent
+        </li>
+        <li>
+          (+1) choix utile
+        </li>
+        <li>
+          (+2) choix essentiel
+        </li>
+      </ul>
+    </div>
+    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
+  </div>
+
+  <div class="container">
+    <div style="width:50%;float:left">
+      <ul>
+        <li ng-repeat="item in ctrl.list2">
+          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list2')">{{item.label}}</a>
+        </li>
+        </ul>
+    </div>
+    <div style="width:50%;float:left">
+      <div>
+        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+      </div>
+      <div ng-show="ctrl.showResult">
+        <h2>NOTE FINALE</h2>
+      </div>
+      <div ng-show="ctrl.showResult"><h2>{{ctrl.note}}</h2></div>
+    </div>
+    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+  </div> 
+</div>
+<ui-view></ui-view>
