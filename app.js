@@ -293,6 +293,7 @@
         // loadGmailApi();
 
       } else {
+        console.log('sami');
         $('#authorize-button').on('click', function(){
           ctrl.handleAuthClick();
         });
