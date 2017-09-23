@@ -30,7 +30,7 @@
   .run(function($state){
     $state.go('home');
   })
-  .controller('ctrl', function ($state) {
+  .controller('ctrl', function ($state, $scope) {
     var ctrl = this;
     ctrl.note = 0;
     ctrl.list = [
@@ -275,20 +275,22 @@
     function handleAuthResult(authResult) {
       if(authResult && !authResult.error) {
         console.log('hello');
-        if (ctrl.candidate){
-          ctrl.noname = false;
-          ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+ctrl.selectedTestId;
-          localStorage[ctrl.candidate] = '';
-          if (ctrl.selectedTestId === 1){
-            ctrl.firstSelected = true;
+        $scope.$apply(function() {
+          if (ctrl.candidate){
+            ctrl.noname = false;
+            ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+ctrl.selectedTestId;
+            localStorage[ctrl.candidate] = '';
+            if (ctrl.selectedTestId === 1){
+              ctrl.firstSelected = true;
+            }
+            else if (ctrl.selectedTestId === 2){
+              ctrl.secondSelected = true;
+            }
+            ctrl.selectedTest = true;
           }
-          else if (ctrl.selectedTestId === 2){
-            ctrl.secondSelected = true;
+          else {
+            ctrl.noname = true;
           }
-          ctrl.selectedTest = true;
-        }
-        else {
-          ctrl.noname = true;
         }
         // loadGmailApi();
 
