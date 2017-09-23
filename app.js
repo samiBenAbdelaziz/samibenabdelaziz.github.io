@@ -291,7 +291,7 @@
           else {
             ctrl.noname = true;
           }
-        }
+        });
         // loadGmailApi();
 
       } else {
