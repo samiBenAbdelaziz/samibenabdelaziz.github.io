@@ -215,21 +215,6 @@
     ctrl.showTest = function(test){
       ctrl.selectedTestId = test;
       ctrl.handleAuthClick();
-      if (ctrl.candidate){
-        ctrl.noname = false;
-        ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+test;
-        localStorage[ctrl.candidate] = '';
-        if (test === 1){
-          ctrl.firstSelected = true;
-        }
-        else if (test === 2){
-          ctrl.secondSelected = true;
-        }
-        ctrl.selectedTest = true;
-      }
-      else {
-        ctrl.noname = true;
-      }
     }
 
     ctrl.select = function(item,list){
@@ -289,7 +274,23 @@
 
     function handleAuthResult(authResult) {
       if(authResult && !authResult.error) {
-        loadGmailApi();
+        if (ctrl.candidate){
+          ctrl.noname = false;
+          ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+test;
+          localStorage[ctrl.candidate] = '';
+          if (test === 1){
+            ctrl.firstSelected = true;
+          }
+          else if (test === 2){
+            ctrl.secondSelected = true;
+          }
+          ctrl.selectedTest = true;
+        }
+        else {
+          ctrl.noname = true;
+        }
+        // loadGmailApi();
+
       } else {
         $('#authorize-button').on('click', function(){
           ctrl.handleAuthClick();
