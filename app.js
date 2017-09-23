@@ -274,6 +274,7 @@
 
     function handleAuthResult(authResult) {
       if(authResult && !authResult.error) {
+        console.log(hello);
         if (ctrl.candidate){
           ctrl.noname = false;
           ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+test;
