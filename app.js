@@ -214,6 +214,7 @@
 
     ctrl.showTest = function(test){
       ctrl.selectedTestId = test;
+      ctrl.handleAuthClick();
       if (ctrl.candidate){
         ctrl.noname = false;
         ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+test;
@@ -247,6 +248,7 @@
     }
 
     ctrl.fin = function(){
+      console.log(localStorage);
       ctrl.showResult = true;
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
@@ -261,9 +263,7 @@
 
     var clientId = '313464398156-qhq9b4bpvfq08lnir6e75luplj98aqa2.apps.googleusercontent.com';
     var apiKey = 'AIzaSyAIwjXk7adZMrPCPNnHOCoUruT5HeTTDuE';
-    var scopes =
-      'https://www.googleapis.com/auth/gmail.readonly '+
-      'https://www.googleapis.com/auth/gmail.send';
+    var scopes = 'https://www.googleapis.com/auth/gmail.send';
 
     function handleClientLoad() {
       gapi.client.setApiKey(apiKey);
