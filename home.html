@@ -4,9 +4,9 @@
     <input type="text" ng-model="ctrl.candidate">
     <p class="red" ng-show="ctrl.noname">Entrez votre nom d'abord</p>
     <h3>Choisissez un cas</h3>
-    <button ng-click="ctrl.showTest(1)">CAS 1</button>
-    <button ng-click="ctrl.showTest(2)">CAS 2</button>
-    <button id="authorize-button" class="btn btn-primary">Authorize</button>
+    <button ng-click="ctrl.showTest(1)" class="btn btn-primary">CAS 1</button>
+    <button ng-click="ctrl.showTest(2)" class="btn btn-primary">CAS 2</button>
+    <button id="authorize-button" ng-click="ctrl.handleAuthClick()" class="btn btn-primary">Authorize</button>
   </div>
 </div>
 <div id="first" ng-if="ctrl.firstSelected">

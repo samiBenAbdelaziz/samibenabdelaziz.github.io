@@ -278,7 +278,7 @@
       }, handleAuthResult);
     }
 
-    function handleAuthClick() {
+    ctrl.handleAuthClick = function() {
       gapi.auth.authorize({
         client_id: clientId,
         scope: scopes,
@@ -290,13 +290,9 @@
     function handleAuthResult(authResult) {
       if(authResult && !authResult.error) {
         loadGmailApi();
-        $('#authorize-button').remove();
-        $('.table-inbox').removeClass("hidden");
-        $('#compose-button').removeClass("hidden");
       } else {
-        $('#authorize-button').removeClass("hidden");
         $('#authorize-button').on('click', function(){
-          handleAuthClick();
+          ctrl.handleAuthClick();
         });
       }
     }
