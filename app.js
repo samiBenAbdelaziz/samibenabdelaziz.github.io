@@ -279,10 +279,10 @@
           ctrl.noname = false;
           ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+ctrl.selectedTestId;
           localStorage[ctrl.candidate] = '';
-          if (test === 1){
+          if (ctrl.selectedTestId === 1){
             ctrl.firstSelected = true;
           }
-          else if (test === 2){
+          else if (ctrl.selectedTestId === 2){
             ctrl.secondSelected = true;
           }
           ctrl.selectedTest = true;
