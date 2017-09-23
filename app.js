@@ -274,10 +274,10 @@
 
     function handleAuthResult(authResult) {
       if(authResult && !authResult.error) {
-        console.log(hello);
+        console.log('hello');
         if (ctrl.candidate){
           ctrl.noname = false;
-          ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+test;
+          ctrl.candidate = ctrl.candidate.replace(/ /g,'_')+ctrl.selectedTestId;
           localStorage[ctrl.candidate] = '';
           if (test === 1){
             ctrl.firstSelected = true;
