@@ -259,9 +259,7 @@
       $state.go('home.recap')
     }
 
-
-
-    var clientId = '313464398156-qhq9b4bpvfq08lnir6e75luplj98aqa2.apps.googleusercontent.com';
+  /* var clientId = '313464398156-qhq9b4bpvfq08lnir6e75luplj98aqa2.apps.googleusercontent.com';
     var apiKey = 'AIzaSyAIwjXk7adZMrPCPNnHOCoUruT5HeTTDuE';
     var scopes = 'https://www.googleapis.com/auth/gmail.send';
 
@@ -515,6 +513,7 @@
       }
       return '';
     }
+    */
 
 
   })
