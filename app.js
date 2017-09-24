@@ -214,7 +214,23 @@
 
     ctrl.showTest = function(test){
       ctrl.selectedTestId = test;
-      ctrl.handleAuthClick();
+      if (ctrl.candidate){
+        ctrl.noname = false;
+        ctrl.candidate = ctrl.candidate.replace(/ /g,'_') + ctrl.selectedTestId;
+        localStorage[ctrl.candidate] = '';
+        if (ctrl.selectedTestId === 1){
+          ctrl.firstSelected = true;
+        }
+        else if (ctrl.selectedTestId === 2){
+          ctrl.secondSelected = true;
+        }
+        ctrl.selectedTest = true;
+      }
+      else {
+        ctrl.noname = true;
+      }
+    }
+      // ctrl.handleAuthClick();
     }
 
     ctrl.select = function(item,list){
