@@ -117,7 +117,44 @@
         label: "Prescrire 70 ml d’oralyte ® après chaque selle liquide et revoir l’enfant dans 24 heures",
         note:0,
         reponse: ["L’enfant reconsulte au bout de 8 heures dans un tableau de collapsus par déshydratation sévère","ARRET DE L'EPREUVE"]
-      }
+      },
+      {
+        id:15,
+        label: "Prescrire du racecadotril (Tiorfan®) sachets",
+        note:1,
+        reponse:["Choix utile"],
+      },
+      {
+        id:16,
+        label: "Prescrire du cefotaxime (Claforan®) 700 mg/j en IV",
+        note:-2,
+        reponse:["Non indiqué", "Risqus iatrogènes"],
+      },
+      {
+        id:17,
+        label: "Prescrire du metoclopramide (Primperan) en intramusculaire",
+        note:-2,
+        reponse:["Non indiqué"],
+      },
+      {
+        id:18,
+        label: "Prescrire des lavages du nez au serum physiologique",
+        note:1,
+        reponse:["Choix utile"],
+      },
+      {
+        id:19,
+        label: "Faire une coproculture",
+        note:-1,
+        reponse:["Non faite", "Non indiquée"],
+      },
+      {
+        id:20,
+        label: "Prescrire des soins du siège à l’éosine aqueuse",
+        note:1,
+        reponse:["Choix utile"],
+      },
+      
     ];
     ctrl.list2 = [
       {
@@ -209,8 +246,164 @@
         label: "Prescrire pour le lendemain la collecte des urines pour chromatographie des acides organiques",
         note:-1,
         reponse: ["il faut collecter les urines immédiatement lors de l’épisode aigu et non le lendemain car les anomalies vont disparaitre le lendemain ."]
-      }
+      },
+      {
+        id: 16,
+        label: "Prélever une calcémie",
+        note:1,
+        reponse: ["calcémie: 90 mg/l (2,25 mmol/l)", "Choix utile"],
+      },
+      {
+        id: 17,
+        label: "Mettre une perfusion intraveineuse de SG5%: 360 ml/j",
+        note:-2,
+        reponse: ["Anas refait une hypoglycémie après 2 heures"],
+      },
+      {
+        id: 18,
+        label: "Surveiller les glycémies capillaires/4H",
+        note:1,
+        reponse: ["Choix utile"],
+      },
+      {
+        id: 19,
+        label: "Faire une échographie cardiaque",
+        note:-2,
+        reponse: ["refusée par le cardiologue", "Pas d’indication"],
+      },
+      {
+        id: 20,
+        label: "Mettre une perfusion intraveineuse de SG10%: 360 ml/j",
+        note:2,
+        reponse: ["Perfusion mise en place", "Choix essentiel"],
+      },
+      
     ];
+    ctrl.list3 = [
+      {
+        id:1,
+        label:"Demander une électrophorèse de l’hémoglobine",
+        note:-1,
+        reponse:["Hb A1: 97%", "Hb A2: 2%", "Hb F: 1%"],
+      },
+      {
+        id:2,
+        label:"Donner de la prednisone (cp à 5 mg): 5 cp/j",
+        note:0,
+        reponse:["ARRÊT DU TEST", "Vous allez masquer  une leucémie aigue  et retarder la prise en charge"],
+      },
+      {
+        id:3,
+        label:"Demander une NFS",
+        note:2,
+        reponse:[
+          "GB: 40,000/mm3",
+          "PNN= 5800	Lymphocytes: 30,000/mm3",
+          "Monocytes: 4000/mm3    Éosinophiles: 200/mm3",
+          "GR= 2,8 106/mm3",
+          "Hb: 8 g/dl   VGM: 88 fl  TCMH: 29 pg",
+          "Réticulocytes: 1%",
+          "Plaquettes: 47 000/mm3",]
+      },
+      {
+        id:4,
+        label:"Prélever des hémocultures",
+        note:1,
+        reponse:[
+          "Hémocultures faites",
+          "Culture négative",
+        ],
+      },
+      {
+        id:5,
+        label:"Demander un groupe sanguin avec phénotypage",
+        note:2,
+        reponse:["Groupe sanguin B positif E+ C+ Kell négatif"],
+      },
+      {
+        id:6,
+        label:"Demander une échographie abdominale",
+        note:1,
+        reponse:[
+          "Pas d’hépatomégalie",
+          "Splénomégalie à 8 cm",
+          "Multiples adénopathies intra-abdominales",
+          "Pas d’épanchement péritonéal",
+        ],
+      },
+      {
+        id:7,
+        label:"Donner de l’acide-acétyl-salicylique sachets 250 mg : 1sachet x 5/j",
+        note:-2,
+        reponse:["risque de complication"],
+      },
+      {
+        id:8,
+        label:"Mettre sous Rocephine: 700 mg/j en IV",
+        note:-1,
+        reponse:[],
+      },
+      {
+        id:9,
+        label:"Demander un frottis sanguin",
+        note:2,
+        reponse:["Présence de 35% de blastes circulants"],
+      },
+      {
+        id:10,
+        label:"Donner du paracétamol: dose n°14 x 4/j",
+        note:1,
+        reponse:["La température baisse à 38,2 puis remonte au bout de 3 heures à 39°C"],
+      },
+      {
+        id:11,
+        label:"Faire un myélogramme",
+        note:2,
+        reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
+      },
+      {
+        id:12,
+        label:"Demander des radiographies des genoux et des chevilles",
+        note:-1,
+        reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
+      },
+      {
+        id:13,
+        label:"Demander la sérologie de la leishmaniose",
+        note:-1,
+        reponse:["Non faite"],
+      },
+      {
+        id:14,
+        label:"Faire un ECG",
+        note:-1,
+        reponse:["ECG normal"],
+      },
+      {
+        id:15,
+        label:"Demander une CRP",
+        note:1,
+        reponse:["CRP= 120 mg/l"],
+      },
+      {
+        id:16,
+        label:"Transfuser par des culots globulaires phénotypés",
+        note:-1,
+        reponse:["CRP= 120 mg/l"],
+      },
+      {
+        id:17,
+        label:"Faire un temps de saignement",
+        note:-1,
+        reponse:["Non fait"],
+      },
+      {
+        id:18,
+        label:"Transfuser par des culots plaquettaires",
+        note:-1,
+        reponse:["Pas d’indication"],
+      },
+    ]
 
     ctrl.showTest = function(test){
       ctrl.selectedTestId = test;
@@ -223,6 +416,9 @@
         }
         else if (ctrl.selectedTestId === 2){
           ctrl.secondSelected = true;
+        }
+        else if (ctrl.selectedTestId === 3){
+          ctrl.thirdSelected = true;
         }
         ctrl.selectedTest = true;
       }
@@ -248,7 +444,6 @@
     }
 
     ctrl.fin = function(){
-      console.log(localStorage);
       ctrl.showResult = true;
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
@@ -287,7 +482,6 @@
 
     function handleAuthResult(authResult) {
       if(authResult && !authResult.error) {
-        console.log('hello');
         $scope.$apply(function() {
           if (ctrl.candidate){
             ctrl.noname = false;
@@ -308,7 +502,6 @@
         // loadGmailApi();
 
       } else {
-        console.log('sami');
         $('#authorize-button').on('click', function(){
           ctrl.handleAuthClick();
         });
@@ -590,7 +783,39 @@
         label: "Prescrire 70 ml d’oralyte ® après chaque selle liquide et revoir l’enfant dans 24 heures",
         reponse: ["L’enfant reconsulte au bout de 8 heures dans un tableau de collapsus par déshydratation sévère","ARRET DE L'EPREUVE"],
         justification: ["Salma a perdu 7% de son poids et a un score de déshydratation à  5➔ déshydratation stade 2 ➔ nécessité d’une hospitalisation pour assurer une réhydratation orale par sonde gastrique (pour remplacer les pertes) et pour surveillance.","Les biberons de SRO après chaque selle sont indiquée en cas de diarrhée chez un nourrisson BIEN HYDRATE. Il s’agit d’un traitement préventif et non curatif"]
-      }
+      },
+      {
+        label: "Prescrire du racecadotril (Tiorfan®) sachets",
+        reponse:["Choix utile"],
+        justification: ["Le racécadotril (Tiorfan®) peut être indiqué du fait de sa capacité à réduire le débit des selles sans effet sur la motricité intestinale."]
+      },
+      {
+        label: "Prescrire du cefotaxime (Claforan®) 700 mg/j en IV",
+        reponse:["Non indiqué", "Risqus iatrogènes"],
+        justification: ["Il n’y a aucun argument en faveur d’une infection bactérienne"]
+      },
+      {
+        label: "Prescrire du metoclopramide (Primperan) en intramusculaire",
+        reponse:["Non indiqué"],
+        justification: ["Les antiémétiques ne sont pas recommandés dans une gastroentérite aiguë"]
+      },
+      {
+        label: "Prescrire des lavages du nez au serum physiologique",
+        reponse:["Choix utile"],
+        justification: [`l’obstruction nasale chez le nourrisson:
+        - peut causer une dyspnée haute
+        - favorise la survenue d’otite moyenne aigue`]
+      },
+      {
+        label: "Faire une coproculture",
+        reponse:["Non faite", "Non indiquée"],
+        justification: ["La diarrhée n’est pas glairo-sanglante", "Pas d’éléments en faveur d’une diarrhée invasive"]
+      },
+      {
+        label: "Prescrire des soins du siège à l’éosine aqueuse",
+        reponse:["Choix utile"],
+        justification: ["Utile pour assécher les lésions et éviter les surinfections mycosiques"]
+      },
     ];
     correction.list2 = [
       {
@@ -646,7 +871,7 @@
       {
         label: "Prélever une glycémie veineuse",
         reponse: ["Glycémie veineuse: 0,26 g/l"],
-        justification : [""]
+        justification : ["La glycémie à la bandelette n’est qu’un moyen de dépistage, toute anomalie doit être confirmée par le dosage veineux de la glycémie qui est le Gold Standard"]
       },
       {
         label: "Prélever des gaz du sang",
@@ -667,15 +892,166 @@
         label: "Prescrire pour le lendemain la collecte des urines pour chromatographie des acides organiques",
         reponse: ["il faut collecter les urines immédiatement lors de l’épisode aigu et non le lendemain car les anomalies vont disparaitre le lendemain ."],
         justification : ["La chromatographie des acides aminés fait partie du bilan de première intention chez tout nouveau-né suspect de maladie métabolique héréditaire","Chez Anas une maladie métabolique héréditaire est fortement suspectée devant: la consanguinité, l’intervalle libre, la détresse neurologique et respiratoire, l’hypoglycémie et l’acidocétose."]
-      }
+      },
+      {
+        label: "Prélever une calcémie",
+        reponse: ["calcémie: 90 mg/l (2,25 mmol/l)", "Choix utile"],
+        justification:["devant tout nouveau-né symptomatique il faut évoquer les causes métaboliques « occasionnelles » à type d’hypo et hypercalcémie."],
+      },
+      {
+        label: "Mettre une perfusion intraveineuse de SG5%: 360 ml/j",
+        reponse: ["Anas refait une hypoglycémie après 2 heures"],
+        justification:["le SG5% n’est pas adapté pour le nouveau-né surtout en hypoglycémie car il ne couvre pas les besoins glucidiques recommandés"],
+      },
+      {
+        label: "Surveiller les glycémies capillaires/4H",
+        reponse: ["Choix utile"],
+        justification:["la surveillance des GAT permet de vérifier la normalisation des glycémies et de détecter les éventuelles récidives."],
+      },
+      {
+        label: "Faire une échographie cardiaque",
+        reponse: ["refusée par le cardiologue", "Pas d’indication"],
+        justification:["pas de signes en faveur d’une insuffisance cardiaque ou en faveur d’une cardiopathie congénitale"],
+      },
+      {
+        label: "Mettre une perfusion intraveineuse de SG10%: 360 ml/j",
+        reponse: ["Perfusion mise en place", "Choix essentiel"],
+        justification:["la perfusion de SG10% permet d’assurer un apport régulier et suffisant pour éviter les hypoglycémies."],
+      },
     ];
-    console.log($state.params.test);
-    if ($state.params.test == 1){
+    correction.list3 = [
+      {
+        label:"Demander une électrophorèse de l’hémoglobine",
+        note:-1,
+        justification: ["Vous avez probablement pensé à une hémoglobinopathie notamment une drépanocytose mais ce diagnostic n’explique pas le purpura"],
+        reponse:["Hb A1: 97%", "Hb A2: 2%", "Hb F: 1%"],
+      },
+      {
+        label:"Donner de la prednisone (cp à 5 mg): 5 cp/j",
+        note:0,
+        justification: ["La corticothérapie n’a aucune place car même si devant des polyarthralgies le diagnostic de RAA est évoqué ceci n’explique pas le purpura ni les douleurs osseuses. Et de toute façon, même dans le RAA la corticothérapie ne serait pas indiquée."],
+        reponse:["ARRÊT DU TEST", "Vous allez masquer  une leucémie aigue  et retarder la prise en charge"],
+      },
+      {
+        label:"Demander une NFS",
+        note:2,
+        justification: ["Choix essentiel, la numération est nécessaire devant tout pupura.", "Dans ce cas elle permet aussi d’objectiver d’autres anomalies: hyperleucocytose à prédominance lymphocytaire, une monocytose, une anémie normochrome normocytaire arégénérative et une thrombopénie"],
+        reponse:[
+          "GB: 40,000/mm3",
+          "PNN= 5800	Lymphocytes: 30,000/mm3",
+          "Monocytes: 4000/mm3    Éosinophiles: 200/mm3",
+          "GR= 2,8 106/mm3",
+          "Hb: 8 g/dl   VGM: 88 fl  TCMH: 29 pg",
+          "Réticulocytes: 1%",
+          "Plaquettes: 47 000/mm3",]
+      },
+      {
+        label:"Prélever des hémocultures",
+        note:1,
+        justification: ["Hazem est fébrile avec altération de l’état général, les hémocultures perttent de rechercher une bactériémie pour guider une éventuelle antibiothérapie"],
+        reponse:[
+          "Hémocultures faites",
+          "Culture négative",
+        ],
+      },
+      {
+        label:"Demander un groupe sanguin avec phénotypage",
+        note:2,
+        justification: ["Choix essentiel", "Hazem a une anémie, il peut nécessiter une transfusion", "Avoir le phénotypage disponible permet de transfuser par du sang compatible pour éviter les immunisations secondaires"],
+        reponse:["Groupe sanguin B positif E+ C+ Kell négatif"],
+      },
+      {
+        label:"Demander une échographie abdominale",
+        note:1,
+        justification: ["Choix utile, l’échographie abdominale permet de rechercher un syndrome tumoral"],
+        reponse:[
+          "Pas d’hépatomégalie",
+          "Splénomégalie à 8 cm",
+          "Multiples adénopathies intra-abdominales",
+          "Pas d’épanchement péritonéal",
+        ],
+      },
+      {
+        label:"Donner de l’acide-acétyl-salicylique sachets 250 mg : 1sachet x 5/j",
+        note:-2,
+        justification: ["Le traitement anti-inflammatoire n’a aucune place il ne s’agit pas d’une maladie rhumatismale.", "Les AINS ne sont pas dénués d’effets indésirables, ils risquent de majorer le risque hémorragique chez ce patient ayant une thrombopénie"],
+        reponse:["risque de complication"],
+      },
+      {
+        label:"Mettre sous Rocephine: 700 mg/j en IV",
+        note:-1,
+        justification: ["Aucune indication", "L’antibiothérapie ne doit pas être donnée sans preuve d’infection bactérienne. Il n’ y a pas d’éléments de gravité immédiate qui justifierait un traitement probabiliste."],
+        reponse:[],
+      },
+      {
+        label:"Demander un frottis sanguin",
+        note:2,
+        justification: ["Choix essentiel", "Le frottis sanguin est un examen simple et rapide", "Une hémopathie maligne est fortement suspectée sur les données cliniques et de l’hémogramme"],
+        reponse:["Présence de 35% de blastes circulants"],
+      },
+      {
+        label:"Donner du paracétamol: dose n°14 x 4/j",
+        note:1,
+        justification: ["Choix utile puisque Hazem est fébrile"],
+        reponse:["La température baisse à 38,2 puis remonte au bout de 3 heures à 39°C"],
+      },
+      {
+        label:"Faire un myélogramme",
+        note:2,
+        justification: ["Choix essentiel", "Le myélogramme est indiqué devant les anomalies de l’hémogramme et du frottis sanguin évoquant une hémopathie maligne"],
+        reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
+      },
+      {
+        label:"Demander des radiographies des genoux et des chevilles",
+        note:-1,
+        justification: ["Choix inutile", "Une scintigraphie osseuse serait plus utile pour rechercher des métastases osseuses"],
+        reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
+      },
+      {
+        label:"Demander la sérologie de la leishmaniose",
+        note:-1,
+        justification: ["Choix indifférent", "La leishmaniose viscérale peut être évoquée au début devant la fièvre prolongée et la splénomégalie mais les données de l’hémogramme et du frottis ne sont pas en faveur de ce diagnostic"],
+        reponse:["Non faite"],
+      },
+      {
+        label:"Faire un ECG",
+        note:-1,
+        justification: ["Cet examen est inutile", "Il n’y a pas d’éléments cliniques en faveur d’une anomalie cardiaque"],
+        reponse:["ECG normal"],
+      },
+      {
+        label:"Demander une CRP",
+        note:1,
+        justification: ["Choix utile", "Devant un tableau de fièvre prolongée, la CRP permet de rechercher un syndrome inflammatoire biologique"],
+        reponse:["CRP= 120 mg/l"],
+      },
+      {
+        label:"Transfuser par des culots globulaires phénotypés",
+        note:-1,
+        justification: ["Choix inutile car il n’ya pas de signes de mauvaise tolérance de l’anémie.", "Le traitement de la leucémie aigue se complique d’une aplasie médullaire et Hazem aura besoin très probablement de transfusions plus tard.", "Une transfusion inutile peut provoquer une immunisation et donc l’échec des transfusions ultérieures."],
+        reponse:["CRP= 120 mg/l"],
+      },
+      {
+        label:"Faire un temps de saignement",
+        note:-1,
+        justification: ["Examen inutile car Hazem a un pupura thrombopénique", "La réalisation d’un temps de saignement n’a aucun intérêt", "C’est un geste invasif avec risque de cicatrices"],
+        reponse:["Non fait"],
+      },
+      {
+        label:"Transfuser par des culots plaquettaires",
+        note:-1,
+        justification: ["Choix inutile car il n’y a pas de syndrome hémorragique", "Le traitement de la leucémie aigue se complique d’une aplasie médullaire et Hazem aura besoin très probablement de transfusions plus tard.", "Une transfusion inutile peut provoquer une immunisation et donc l’échec des transfusions ultérieures."],
+        reponse:["Pas d’indication"],
+      },
+    ];
+    if ($state.params.test === 1){
       correction.selectedList = correction.list;
     }
-    else if ($state.params.test == 2){
-      console.log($state.params.test);
+    else if ($state.params.test === 2){
       correction.selectedList = correction.list2;
+    }
+    else if ($state.params.test === 3){
+      correction.selectedList = correction.list3;
     }
     correction.reset = function(){
       $state.go('home', {}, {reload: true});
@@ -684,7 +1060,7 @@
     var recap = this;
     recap.validate = function(){
       var pass = recap.cypher();
-      if (pass.s === 570 && pass.p === 306246875590656000){
+      if (pass.s === 753 && pass.p === 81267812556971030000){
         recap.valid = true;
       }
     }
@@ -698,7 +1074,6 @@
       for (var i=0;i<recap.pass.length;i++){
         p*=recap.pass.charCodeAt(i);
       }
-      console.log(s,p);
       return {s:s,p:p};
 
     }
@@ -708,7 +1083,6 @@
       recap.listCandidats[prop] = JSON.parse(localStorage[prop]);
     }
     delete recap.listCandidats.length;
-    console.log(recap.listCandidats);
     for (var candidat in recap.listCandidats){
       recap.candidats[candidat] = {reponses: recap.listCandidats[candidat].reponse.filter(function(rep){
         return rep.clicked;

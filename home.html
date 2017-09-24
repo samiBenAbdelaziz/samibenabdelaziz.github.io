@@ -4,8 +4,9 @@
     <input type="text" ng-model="ctrl.candidate">
     <p class="red" ng-show="ctrl.noname">Entrez votre nom d'abord</p>
     <h3>Choisissez un cas</h3>
-    <button ng-click="ctrl.showTest(1)" class="btn btn-primary">CAS 1</button>
-    <button ng-click="ctrl.showTest(2)" class="btn btn-primary">CAS 2</button>
+    <button ng-click="ctrl.showTest(1)" class="btn btn-primary">PMP gastroentérite</button>
+    <button ng-click="ctrl.showTest(2)" class="btn btn-primary">PMP détresse néonatale</button>
+    <button ng-click="ctrl.showTest(3)" class="btn btn-primary">PMP fièvre prolongée</button>
     <!-- <button id="authorize-button" ng-click="ctrl.handleAuthClick()" class="btn btn-primary">Authorize</button> -->
   </div>
 </div>
@@ -115,7 +116,7 @@
       NN comateux, hypotonie généralisée, FA normotendue, réflexes archaiques absents
       </li>
       <li>
-      Pas d’HMG,  Glycémie au talon: 0,3 g/l
+      Pas d’HMG, Glycémie au talon: 0,3 g/l
       </li>
     </ul>
     <h1>INSTRUCTIONS</h1>
@@ -151,6 +152,92 @@
       <ul>
         <li ng-repeat="item in ctrl.list2">
           <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list2')">{{item.label}}</a>
+        </li>
+        </ul>
+    </div>
+    <div style="width:50%;float:left">
+      <div>
+        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+      </div>
+      <div ng-show="ctrl.showResult">
+        <h2>NOTE FINALE</h2>
+      </div>
+      <div ng-show="ctrl.showResult"><h2>{{ctrl.note}}</h2></div>
+    </div>
+    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+  </div>
+</div>
+<div id="third" ng-if="ctrl.thirdSelected">
+  <div class="container">
+    <p>Hazem, âgé de 4 ans présente depuis  3 semaines une fièvre à 38 - 39°C, une altération de l’état général avec arthralgies des genoux et chevilles. </p>
+
+    A l’examen:
+    <ul>
+      <li>
+        Poids= 14 Kg (poids il ya 2 mois: 15Kg)
+      </li>
+      <li>
+        Température  à 38,7, Pâleur cutanéo-muqueuse
+      </li>
+      <li>
+        Purpura pétéchial du tronc et des membres inférieurs
+      </li>
+      <li>
+        Flèche hépatique=7cm, Flèche splénique à 5 cm
+      </li>
+      <li>
+          F. respiratoire: 24c/mn, Auscultation cardio-pulmonaire normale
+      </li>
+      <li>
+          FC=110/mn, TA= 10/5
+      </li>
+      <li>
+        Examen neurologique normal
+      </li>
+      <li>
+        Labstix: pH=6 le reste est négatif
+      </li>
+      <li>
+        douleur à la pression des deux jambes, articulations libres.
+      </li>
+      <li>
+        Pas d’adénopathies palpables
+      </li>
+    </ul>
+    <h1>INSTRUCTIONS</h1>
+    <h3>Quelle est votre conduite à tenir?</h3>
+    <div>
+      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
+    </div>
+    <div>
+      <p>L’échelle de cotation est la suivante :</p>
+      <ul>
+        <li>
+          (-2) choix dangereux ou inutilement couteux
+        </li>
+        <li>
+          (-1) choix non dangereux mais inutile
+        </li>
+        <li>
+          (0) choix indifférent
+        </li>
+        <li>
+          (+1) choix utile
+        </li>
+        <li>
+          (+2) choix essentiel
+        </li>
+      </ul>
+    </div>
+    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
+  </div>
+
+  <div class="container">
+    <div style="width:50%;float:left">
+      <ul>
+        <li ng-repeat="item in ctrl.list3">
+          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list3')">{{item.label}}</a>
         </li>
         </ul>
     </div>
