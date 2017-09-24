@@ -229,7 +229,6 @@
       else {
         ctrl.noname = true;
       }
-    }
       // ctrl.handleAuthClick();
     }
 
