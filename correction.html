@@ -1,6 +1,6 @@
 <div class="container" style="margin-bottom: 20px">
-  {{$state.params.test}}
-  <div ng-if="$state.params.test == 1">
+  {{correction.testId}}
+  <div ng-if="correction.testId == 1">
     <h3>Public cible:</h3>
     <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
     <h3>Prérequis:</h3>
@@ -26,7 +26,7 @@
       </li>
     </ul>
   </div>
-  <div ng-if="$state.params.test == 2">
+  <div ng-if="correction.testId == 2">
       <h3>Public cible:</h3>
       <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
       <h3>Prérequis:</h3>
@@ -52,7 +52,7 @@
         </li>
       </ul>
     </div>
-    <div ng-if="$state.params.test == 3">
+    <div ng-if="correction.testId == 3">
     <h3>Public cible:</h3>
     <p>étudiants en médecine 4 ème année de médecine en pédiatrie, internes en médecine, résidents de médecine de famille.</p>
     <h3>Prérequis:</h3>
