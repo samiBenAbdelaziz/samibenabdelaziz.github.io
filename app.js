@@ -712,6 +712,7 @@
   })
   .controller('correction', function($state){
     var correction = this;
+    console.log("hello");
     correction.list = [
       {
         label: "Prélever une C Reactive Proteine",
