@@ -1044,6 +1044,7 @@
         reponse:["Pas d’indication"],
       },
     ];
+    console.log(test);
     if ($state.params.test === 1){
       correction.selectedList = correction.list;
     }
@@ -1053,6 +1054,7 @@
     else if ($state.params.test === 3){
       correction.selectedList = correction.list3;
     }
+    console.log(correction.selectedList);
     correction.reset = function(){
       $state.go('home', {}, {reload: true});
     }
