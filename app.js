@@ -444,6 +444,7 @@
     }
 
     ctrl.fin = function(){
+      console.log('sss');
       ctrl.showResult = true;
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
