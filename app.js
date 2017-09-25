@@ -444,7 +444,7 @@
     }
 
     ctrl.fin = function(){
-      console.log('sss');
+      console.log('fin');
       ctrl.showResult = true;
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
@@ -713,7 +713,6 @@
   })
   .controller('correction', function($state){
     var correction = this;
-    console.log("hello");
     correction.list = [
       {
         label: "Prélever une C Reactive Proteine",
@@ -1046,7 +1045,6 @@
         reponse:["Pas d’indication"],
       },
     ];
-    console.log(test);
     if ($state.params.test === 1){
       correction.selectedList = correction.list;
     }
