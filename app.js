@@ -1045,13 +1045,13 @@
         reponse:["Pas d’indication"],
       },
     ];
-    if ($state.params.test === 1){
+    if ($state.params.test == 1){
       correction.selectedList = correction.list;
     }
-    else if ($state.params.test === 2){
+    else if ($state.params.test == 2){
       correction.selectedList = correction.list2;
     }
-    else if ($state.params.test === 3){
+    else if ($state.params.test == 3){
       correction.selectedList = correction.list3;
     }
     console.log(correction.selectedList);
