@@ -1045,7 +1045,7 @@
         reponse:["Pas d’indication"],
       },
     ];
-    ctrl.testId = $state.params.test;
+    correction.testId = $state.params.test;
     if ($state.params.test == 1){
       correction.selectedList = correction.list;
     }
