@@ -1054,7 +1054,6 @@
     else if ($state.params.test == 3){
       correction.selectedList = correction.list3;
     }
-    console.log(correction.selectedList);
     correction.reset = function(){
       $state.go('home', {}, {reload: true});
     }
