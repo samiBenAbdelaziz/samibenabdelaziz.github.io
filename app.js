@@ -32,7 +32,7 @@
   })
   .controller('ctrl', function ($state, $scope) {
     var ctrl = this;
-    ctrl.note = 0;
+    ctrl.score = 0;
     ctrl.list = [
       {
         id: 1,
@@ -116,6 +116,7 @@
         id: 14,
         label: "Prescrire 70 ml d’oralyte ® après chaque selle liquide et revoir l’enfant dans 24 heures",
         note:0,
+        end: true,
         reponse: ["L’enfant reconsulte au bout de 8 heures dans un tableau de collapsus par déshydratation sévère","ARRET DE L'EPREUVE"]
       },
       {
@@ -290,6 +291,7 @@
         id:2,
         label:"Donner de la prednisone (cp à 5 mg): 5 cp/j",
         note:0,
+        end: true,
         reponse:["ARRÊT DU TEST", "Vous allez masquer  une leucémie aigue  et retarder la prise en charge"],
       },
       {
@@ -365,12 +367,12 @@
         id:12,
         label:"Demander des radiographies des genoux et des chevilles",
         note:-1,
-        reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
+        reponse:["	Radiographies normales"],
       },
       {
         id:13,
         label:"Demander la sérologie de la leishmaniose",
-        note:-1,
+        note:0,
         reponse:["Non faite"],
       },
       {
@@ -389,7 +391,7 @@
         id:16,
         label:"Transfuser par des culots globulaires phénotypés",
         note:-1,
-        reponse:["CRP= 120 mg/l"],
+        reponse:["Pas d’indication"],
       },
       {
         id:17,
@@ -432,10 +434,10 @@
       if (!item.clicked && !ctrl.end){
         ctrl.selectedItem = item;
         item.clicked = true;
-        ctrl.note += item.note;
-        localStorage[ctrl.candidate] = JSON.stringify({ reponse: ctrl[list], note: ctrl.note});
-        if (item.note === 0){
-          ctrl.note = 0;
+        ctrl.score += item.note;
+        localStorage[ctrl.candidate] = JSON.stringify({ reponse: ctrl[list], note: ctrl.score});
+        if (item.note === 0 && item.end){
+          ctrl.score = 0;
           ctrl.fin();
           return;
         }
@@ -444,7 +446,6 @@
     }
 
     ctrl.fin = function(){
-      console.log('fin');
       ctrl.showResult = true;
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
@@ -923,19 +924,16 @@
     correction.list3 = [
       {
         label:"Demander une électrophorèse de l’hémoglobine",
-        note:-1,
         justification: ["Vous avez probablement pensé à une hémoglobinopathie notamment une drépanocytose mais ce diagnostic n’explique pas le purpura"],
         reponse:["Hb A1: 97%", "Hb A2: 2%", "Hb F: 1%"],
       },
       {
         label:"Donner de la prednisone (cp à 5 mg): 5 cp/j",
-        note:0,
         justification: ["La corticothérapie n’a aucune place car même si devant des polyarthralgies le diagnostic de RAA est évoqué ceci n’explique pas le purpura ni les douleurs osseuses. Et de toute façon, même dans le RAA la corticothérapie ne serait pas indiquée."],
         reponse:["ARRÊT DU TEST", "Vous allez masquer  une leucémie aigue  et retarder la prise en charge"],
       },
       {
         label:"Demander une NFS",
-        note:2,
         justification: ["Choix essentiel, la numération est nécessaire devant tout pupura.", "Dans ce cas elle permet aussi d’objectiver d’autres anomalies: hyperleucocytose à prédominance lymphocytaire, une monocytose, une anémie normochrome normocytaire arégénérative et une thrombopénie"],
         reponse:[
           "GB: 40,000/mm3",
@@ -948,7 +946,6 @@
       },
       {
         label:"Prélever des hémocultures",
-        note:1,
         justification: ["Hazem est fébrile avec altération de l’état général, les hémocultures perttent de rechercher une bactériémie pour guider une éventuelle antibiothérapie"],
         reponse:[
           "Hémocultures faites",
@@ -957,13 +954,11 @@
       },
       {
         label:"Demander un groupe sanguin avec phénotypage",
-        note:2,
         justification: ["Choix essentiel", "Hazem a une anémie, il peut nécessiter une transfusion", "Avoir le phénotypage disponible permet de transfuser par du sang compatible pour éviter les immunisations secondaires"],
         reponse:["Groupe sanguin B positif E+ C+ Kell négatif"],
       },
       {
         label:"Demander une échographie abdominale",
-        note:1,
         justification: ["Choix utile, l’échographie abdominale permet de rechercher un syndrome tumoral"],
         reponse:[
           "Pas d’hépatomégalie",
@@ -974,73 +969,61 @@
       },
       {
         label:"Donner de l’acide-acétyl-salicylique sachets 250 mg : 1sachet x 5/j",
-        note:-2,
         justification: ["Le traitement anti-inflammatoire n’a aucune place il ne s’agit pas d’une maladie rhumatismale.", "Les AINS ne sont pas dénués d’effets indésirables, ils risquent de majorer le risque hémorragique chez ce patient ayant une thrombopénie"],
         reponse:["risque de complication"],
       },
       {
         label:"Mettre sous Rocephine: 700 mg/j en IV",
-        note:-1,
         justification: ["Aucune indication", "L’antibiothérapie ne doit pas être donnée sans preuve d’infection bactérienne. Il n’ y a pas d’éléments de gravité immédiate qui justifierait un traitement probabiliste."],
         reponse:[],
       },
       {
         label:"Demander un frottis sanguin",
-        note:2,
         justification: ["Choix essentiel", "Le frottis sanguin est un examen simple et rapide", "Une hémopathie maligne est fortement suspectée sur les données cliniques et de l’hémogramme"],
         reponse:["Présence de 35% de blastes circulants"],
       },
       {
         label:"Donner du paracétamol: dose n°14 x 4/j",
-        note:1,
         justification: ["Choix utile puisque Hazem est fébrile"],
         reponse:["La température baisse à 38,2 puis remonte au bout de 3 heures à 39°C"],
       },
       {
         label:"Faire un myélogramme",
-        note:2,
         justification: ["Choix essentiel", "Le myélogramme est indiqué devant les anomalies de l’hémogramme et du frottis sanguin évoquant une hémopathie maligne"],
         reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
       },
       {
         label:"Demander des radiographies des genoux et des chevilles",
-        note:-1,
         justification: ["Choix inutile", "Une scintigraphie osseuse serait plus utile pour rechercher des métastases osseuses"],
-        reponse:["Aspect en faveur d’une leucémie aigue myéloblastique"],
+        reponse:["	Radiographies normales"],
       },
       {
         label:"Demander la sérologie de la leishmaniose",
-        note:-1,
         justification: ["Choix indifférent", "La leishmaniose viscérale peut être évoquée au début devant la fièvre prolongée et la splénomégalie mais les données de l’hémogramme et du frottis ne sont pas en faveur de ce diagnostic"],
         reponse:["Non faite"],
       },
       {
         label:"Faire un ECG",
-        note:-1,
         justification: ["Cet examen est inutile", "Il n’y a pas d’éléments cliniques en faveur d’une anomalie cardiaque"],
         reponse:["ECG normal"],
       },
       {
         label:"Demander une CRP",
-        note:1,
         justification: ["Choix utile", "Devant un tableau de fièvre prolongée, la CRP permet de rechercher un syndrome inflammatoire biologique"],
         reponse:["CRP= 120 mg/l"],
       },
       {
         label:"Transfuser par des culots globulaires phénotypés",
-        note:-1,
         justification: ["Choix inutile car il n’ya pas de signes de mauvaise tolérance de l’anémie.", "Le traitement de la leucémie aigue se complique d’une aplasie médullaire et Hazem aura besoin très probablement de transfusions plus tard.", "Une transfusion inutile peut provoquer une immunisation et donc l’échec des transfusions ultérieures."],
-        reponse:["CRP= 120 mg/l"],
+        reponse:["Pas d’indication"],
       },
       {
         label:"Faire un temps de saignement",
-        note:-1,
         justification: ["Examen inutile car Hazem a un pupura thrombopénique", "La réalisation d’un temps de saignement n’a aucun intérêt", "C’est un geste invasif avec risque de cicatrices"],
         reponse:["Non fait"],
       },
       {
         label:"Transfuser par des culots plaquettaires",
-        note:-1,
         justification: ["Choix inutile car il n’y a pas de syndrome hémorragique", "Le traitement de la leucémie aigue se complique d’une aplasie médullaire et Hazem aura besoin très probablement de transfusions plus tard.", "Une transfusion inutile peut provoquer une immunisation et donc l’échec des transfusions ultérieures."],
         reponse:["Pas d’indication"],
       },
