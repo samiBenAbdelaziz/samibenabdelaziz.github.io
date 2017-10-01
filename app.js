@@ -16,7 +16,7 @@
       controller: 'ctrl',
       controllerAs: 'ctrl'
     }).state('home.correction', {
-      url: 'correction/:test',
+      url: 'correction/:test#objectif',
       templateUrl: 'correction.html',
       controller: 'correction',
       controllerAs: 'correction'
