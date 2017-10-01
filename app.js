@@ -33,6 +33,7 @@
   .controller('ctrl', function ($state, $scope) {
     var ctrl = this;
     ctrl.score = 0;
+    ctrl.negScore = 0;
     ctrl.list = [
       {
         id: 1,
