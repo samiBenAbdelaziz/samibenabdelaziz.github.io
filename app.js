@@ -435,6 +435,9 @@
         ctrl.selectedItem = item;
         item.clicked = true;
         ctrl.score += item.note;
+        if(item.note<0){
+          ctrl.negScore+=item.note;
+        }
         localStorage[ctrl.candidate] = JSON.stringify({ reponse: ctrl[list], note: ctrl.score});
         if (item.note === 0 && item.end){
           ctrl.score = 0;
@@ -445,7 +448,39 @@
       }
     }
 
+    function getNote(id){
+      var totalNeg = 0;
+      var total = 0;
+      switch(id){
+        case 1:
+          ctrl.list.forEach(function(element) {
+            total += element.note
+            if (element.note < 0){
+              totalNeg += element.note;
+            }
+          });
+          break;
+        case 2:
+          ctrl.list2.forEach(function(element) {
+            if (element.note < 0){
+              totalNeg += element.note;
+            }
+          });
+          break;
+        case 3:
+          ctrl.list3.forEach(function(element) {
+            if (element.note < 0){
+              totalNeg += element.note;
+            }
+          });
+          break;
+      }
+      return ((ctrl.score - ctrl.negScore) / (total - totalNeg)) * 20;
+    }
+
     ctrl.fin = function(){
+      console.log(getNote(ctrl.selectedTestId));
+      ctrl.note = getNote(ctrl.selectedTestId);
       ctrl.showResult = true;
       ctrl.end = true;
       $state.go('home.correction', {test:ctrl.selectedTestId});
