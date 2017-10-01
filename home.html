@@ -163,9 +163,11 @@
         <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
       </div>
       <div ng-show="ctrl.showResult">
-        <h2>NOTE FINALE</h2>
+        <h2>SCORE FINAL</h2>
       </div>
-      <div ng-show="ctrl.showResult"><h2>{{ctrl.note}}</h2></div>
+      <div ng-show="ctrl.showResult"><h2>{{ctrl.score}}</h2></div>
+      <h2>NOTE</h2>
+      <div><h2>{{ctrl.note}}/20</h2></div>
     </div>
     <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
   </div>
@@ -249,9 +251,11 @@
         <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
       </div>
       <div ng-show="ctrl.showResult">
-        <h2>NOTE FINALE</h2>
+        <h2>SCORE FINAL</h2>
       </div>
-      <div ng-show="ctrl.showResult"><h2>{{ctrl.note}}</h2></div>
+      <div ng-show="ctrl.showResult"><h2>{{ctrl.score}}</h2></div>
+      <h2>NOTE</h2>
+      <div><h2>{{ctrl.note}}/20</h2></div>
     </div>
     <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
   </div>
