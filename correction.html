@@ -80,17 +80,17 @@
       </li>
     </ul>
   </div>
-  <h1>CORRECTION DETAILLEE</h1>
+  <h1>CORRECTION DETAILLÉE</h1>
   <div class="col-md-12" ng-repeat="item in correction.selectedList">
-    <div class="col-md-6" style="margin: 10px 0"><h4>Reponse</h4></div>
-    <div class="col-md-6" style="margin: 10px 0"><h4>Resultat</h4></div>
+    <div class="col-md-6" style="margin: 10px 0"><h4>Proposition</h4></div>
+    <div class="col-md-6" style="margin: 10px 0"><h4>Réponse</h4></div>
     <div class="col-md-6" style="margin: 10px 0;" >{{item.label}}</div>
     <div class="col-md-6">
       <div class="col-md-12" ng-repeat="reponse in item.reponse">{{reponse}}</div>
     </div>
-    <div class="col-md-12"><h4 style="text-align: left">Details:</h4></div>
+    <div class="col-md-12"><h4 style="text-align: left">Détails:</h4></div>
     <div class="col-md-12" ng-repeat="justification in item.justification">{{justification}}</div>
     <hr class="col-md-12">
   </div>
-  <div style="text-align:center"><button ng-click="correction.reset()" style="margin:auto">DEBUT</button></div>
+  <div style="text-align:center"><button ng-click="correction.reset()" style="margin:auto">DÉBUT</button></div>
 </div>
