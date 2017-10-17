@@ -604,7 +604,7 @@
           ctrl.thirdSelected = true;
         }
         else if (ctrl.selectedTestId === 4){
-          ctrl.thirdSelected = true;
+          ctrl.forthSelected = true;
         }
         ctrl.selectedTest = true;
       }
