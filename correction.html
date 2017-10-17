@@ -5,7 +5,7 @@
     <h3>Prérequis:</h3>
     <ul>
       <li>
-        cours  déshydratation aigue (DCEM2)
+        cours déshydratation aigue (DCEM2)
       </li>
       <li>
         Cours diarrhée aigue (DCEM2)
@@ -26,32 +26,32 @@
     </ul>
   </div>
   <div ng-if="correction.testId == 2">
-      <h3>Public cible:</h3>
-      <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
-      <h3>Prérequis:</h3>
-      <ul>
-        <li>
-          Cours  urgences métaboliques (DCEM2)
-        </li>
-        <li>
-          Cours détresse respiratoire néonatale (DCEM2)
-        </li>
-      </ul>
-      <h3>Objectifs éducationnels:</h3>
-      <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
-      <ul>
-        <li>
-          Poser le diagnostic d’une détresse néonatale sur des arguments cliniques
-        </li>
-        <li>
-          Évaluer le stade de déshydratation du nourrisson en sa basant sur des éléments cliniques
-        </li>
-        <li>
-          Planifier la prise en charge d’un nouveau-né en détresse
-        </li>
-      </ul>
-    </div>
-    <div ng-if="correction.testId == 3">
+    <h3>Public cible:</h3>
+    <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
+    <h3>Prérequis:</h3>
+    <ul>
+      <li>
+        Cours urgences métaboliques (DCEM2)
+      </li>
+      <li>
+        Cours détresse respiratoire néonatale (DCEM2)
+      </li>
+    </ul>
+    <h3>Objectifs éducationnels:</h3>
+    <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
+    <ul>
+      <li>
+        Poser le diagnostic d’une détresse néonatale sur des arguments cliniques
+      </li>
+      <li>
+        Évaluer le stade de déshydratation du nourrisson en sa basant sur des éléments cliniques
+      </li>
+      <li>
+        Planifier la prise en charge d’un nouveau-né en détresse
+      </li>
+    </ul>
+  </div>
+  <div ng-if="correction.testId == 3">
     <h3>Public cible:</h3>
     <p>étudiants en médecine 4 ème année de médecine en pédiatrie, internes en médecine, résidents de médecine de famille.</p>
     <h3>Prérequis:</h3>
@@ -80,15 +80,50 @@
       </li>
     </ul>
   </div>
+  <div ng-if="correction.testId == 3">
+      <h3>Public cible:</h3>
+      <p>étudiants en médecine 4 ème année de médecine en pédiatrie, internes en médecine, résidents de médecine de famille.</p>
+      <h3>Prérequis:</h3>
+      <ul>
+        <li>
+          Cours convulsions épilepsies (DCEM2)
+        </li>
+        <li>
+          Cours purpura (DCEM2)
+        </li>
+      </ul>
+      <h3>Objectifs éducationnels:</h3>
+      <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
+      <ul>
+        <li>
+          Réunir les éléments cliniques nécessaires pour le diagnostic étiologique d’une convulsion fébrile du nourrisson.
+        </li>
+        <li>
+          Planifier les explorations à visée étiologique d’une convulsion fébrile du nourrisson en se limitant aux explorations essentielles compte tenu des données cliniques.            
+        </li>
+        <li>
+          Classer la convulsion fébrile en typique ou atypique en se basant sur les éléments cliniques. 
+        </li>
+        <li>
+          Planifier la prise en charge thérapeutique immédiate et à moyen terme d’un nourrisson ayant une convulsion fébrile.
+        </li>
+      </ul>
+    </div>
   <h1>CORRECTION DETAILLÉE</h1>
   <div class="col-md-12" ng-repeat="item in correction.selectedList">
-    <div class="col-md-6" style="margin: 10px 0"><h4>Proposition</h4></div>
-    <div class="col-md-6" style="margin: 10px 0"><h4>Réponse</h4></div>
-    <div class="col-md-6" style="margin: 10px 0;" >{{item.label}}</div>
+    <div class="col-md-6" style="margin: 10px 0">
+      <h4>Proposition</h4>
+    </div>
+    <div class="col-md-6" style="margin: 10px 0">
+      <h4>Réponse</h4>
+    </div>
+    <div class="col-md-6" style="margin: 10px 0;">{{item.label}}</div>
     <div class="col-md-6">
       <div class="col-md-12" ng-repeat="reponse in item.reponse">{{reponse}}</div>
     </div>
-    <div class="col-md-12"><h4 style="text-align: left">Détails:</h4></div>
+    <div class="col-md-12">
+      <h4 style="text-align: left">Détails:</h4>
+    </div>
     <div class="col-md-12" ng-repeat="justification in item.justification">{{justification}}</div>
     <hr class="col-md-12">
   </div>

@@ -406,7 +406,187 @@
         note:-1,
         reponse:["Pas d’indication"],
       },
-    ]
+    ];
+    ctrl.list4 = [
+      {
+        id:1,
+        label:"Rechercher des antécédents familiaux d’épilepsie",
+        note:2,
+        reponse:["Pas d’antécédents familiaux d’épilepsie"],
+      },
+      {
+        id:2,
+        label:"Vérifier le statut vaccinal de Lina",
+        note:2,
+        reponse:[
+          "BCG, hépatite B à la naissance",
+          "DTC Polio, HiB et hépatite à 2 mois",
+          "DTC Polio, HiB à 3 mois",
+          "Vaccin de 6 mois reporté car a eu une bronchiolite"],
+      },
+      {
+        id:3,
+        label:"Préciser son développement psychomoteur",
+        note:2,
+        reponse:[
+          "Sourire réponse à 35 jours",
+          "Tenue de la tête à 2 mois et demi",
+          "Position assise avec appui à 6 mois",
+          "Préhension (+)",
+          "Babillage depuis 1 mois",]
+      },
+      {
+        id:4,
+        label:"Vérifier la prise de vitamine D",
+        note:2,
+        reponse:[
+          "A pris du sterogyl® 3  gouttes par jour jusqu’à l’âge de 6 mois",
+          "À 6mois a pris une dose de vitamine D3: 200000U pers os",
+        ],
+      },
+      {
+        id:5,
+        label:"Vérifier si Lina a eu un traumatisme récent",
+        note:1,
+        reponse:["Lina est gardée par sa mère", "Pas de notion de traumatisme récent"],
+      },
+      {
+        id:6,
+        label:"Rechercher la présence de médicaments ou de toxiques à portée",
+        note:1,
+        reponse:[
+          "Lina est gardée par sa mère",
+          "Pas de médicaments ou de toxiques à sa portée",
+        ],
+      },
+      {
+        id:7,
+        label:"Mesurer la pression artérielle ",
+        note:1,
+        reponse:["Pression artérielle 90/55 mmHg"],
+      },
+      {
+        id:8,
+        label:"Demander un examen du fond d’œil",
+        note:-1,
+        reponse:["Refusé par l’ophtalmologue de garde."],
+      },
+      {
+        id:9,
+        label:"Faire une otoscopie",
+        note:2,
+        reponse:["Tympans complets légèrement congestifs"],
+      },
+      {
+        id:10,
+        label:"Faire un examen des urines à la bandelette réactive Multistix®",
+        note:2,
+        reponse:["Urines limpides/ pH:5", "Densité Urinaire: 1015/ A,G,P,H,L,N: (-)"],
+      },
+      {
+        id:11,
+        label:"Faire une glycémie au doigt",
+        note:2,
+        reponse:["Glycémie au doigt: 0,76g/l"],
+      },
+      {
+        id:12,
+        label:"Demander une calcémie",
+        note:-1,
+        reponse:["Non faite car non indiquée"],
+      },
+      {
+        id:13,
+        label:"Demander une numération formule sanguine",
+        note:-1,
+        reponse:["Non faite CAR non indiquée"],
+      },
+      {
+        id:14,
+        label:"Prélever une hémoculture",
+        note:-1,
+        reponse:["Non faite car non indiquée"],
+      },
+      {
+        id:15,
+        label:"Demander un ionogramme sanguin",
+        note:-1,
+        reponse:["Non fait car non indiqué"],
+      },
+      {
+        id:16,
+        label:"Réaliser une ponction lombaire",
+        note:2,
+        reponse:[
+          "Liquide eau de roche normotendu",
+          "Globules rouges 2 élém/mm3, GB: 1 élém/mm3",
+          "Glucorrachie: 0,45 g/l; Albuminorrachie: 0,1g/l",
+          "Examen direct: négatif"],
+      },
+      {
+        id:17,
+        label:"Pratiquer une radiographie du  thorax au lit ",
+        note:-1,
+        reponse:["Non faite car non indiquée",]
+      },
+      {
+        id:18,
+        label:"Demander un rendez-vous proche d’électroencéphalogramme  (dans les 48H)",
+        note:-1,
+        reponse:["Rendez-vous pris dans 15 jours"],
+      },
+      {
+        id:19,
+        label:"Demander une échographie transfontanellaire",
+        note:-2,
+        reponse:["Refusée par le radiologue de garde car non indiquée"],
+      },
+      {
+        id:20,
+        label:"Demander des transaminases",
+        note:1,
+        reponse:[
+          "ASAT: 39U/l",
+          "ALAT:22U/L",
+        ],
+      },
+      {
+        id:21,
+        label:"Prescrire du paracétamol sirop dose de poids 4 fois par jour",
+        note:2,
+        reponse:["Paracétamol donné", "Température contrôlée à 38,2° après 1 H"],
+      },
+      {
+        id:22,
+        label:"Donner du valium®: 0,5 mg/Kg en intra-rectal",
+        note:-1,
+        reponse:["Non donné", "Lina n’est pas en train de convulser"],
+      },
+      {
+        id:23,
+        label:"Prescrire un bolus de phenobarbital (Gardenal®): 20 mg/Kg en IL lente",
+        note:-2,
+        reponse:["Inutile", "Il ne s’agit pas d’un état de mal convulsif"],
+      },
+      {
+        id:24,
+        label:"Prescrire du valium® gouttes 0,5 mg/Kg/j tant que persiste la fièvre",
+        note:-1,
+        reponse:["Non donné car inutile"],
+      },
+      {
+        id:25,
+        label:"Prescrire du valproate (Depakine®) sirop  30mg/Kg/j ",
+        note:2,
+        reponse:["Depakine® commencée ce jour", "Ordonnance faite pour 3 mois"],
+      },
+      {
+        id:26,
+        label:"Rassurer les parents et laisser partir Lina ",
+        note:-2,
+        reponse:["L’enfant refait des pics de fièvre à 40°C et reconvulse chez lui", "Il est ramené aux urgences après 4 heures"],
+      },
+    ];
 
     ctrl.showTest = function(test){
       ctrl.selectedTestId = test;
@@ -421,6 +601,9 @@
           ctrl.secondSelected = true;
         }
         else if (ctrl.selectedTestId === 3){
+          ctrl.thirdSelected = true;
+        }
+        else if (ctrl.selectedTestId === 4){
           ctrl.thirdSelected = true;
         }
         ctrl.selectedTest = true;
@@ -1062,6 +1245,232 @@
         label:"Transfuser par des culots plaquettaires",
         justification: ["Choix inutile car il n’y a pas de syndrome hémorragique", "Le traitement de la leucémie aigue se complique d’une aplasie médullaire et Hazem aura besoin très probablement de transfusions plus tard.", "Une transfusion inutile peut provoquer une immunisation et donc l’échec des transfusions ultérieures."],
         reponse:["Pas d’indication"],
+      },
+    ];
+    correction.list4 = [
+      {
+        label:"Rechercher des antécédents familiaux d’épilepsie",
+        justification : [
+          "La présence d’antécédents familiaux d’épilepsie est associée à un risque plus élevé de développer une épilepsie.",
+          "Cet élément sera pris en considération lors de la décision ou non de mettre sous traitement convulsivant en continu.",
+        ],
+        reponse:["Pas d’antécédents familiaux d’épilepsie"],
+      },
+      {
+        label:"Vérifier le statut vaccinal de Lina",
+        justification : ["La vaccination de Lina n’est pas à jour",
+          "Ceci justifie la réalisation d’une ponction lombaire chez cette enfant de moins de 12 mois",
+        ],
+        reponse:[
+          "BCG, hépatite B à la naissance",
+          "DTC Polio, HiB et hépatite à 2 mois",
+          "DTC Polio, HiB à 3 mois",
+          "Vaccin de 6 mois reporté car a eu une bronchiolite"],
+      },
+      {
+        label:"Préciser son développement psychomoteur",
+        justification : ["Le développement psychomoteur de Lina est normal",
+          "Une anomalie du développement psychomoteur (retard ou régression) ferait évoquer un épilepsie dont il faudra rechercher l’étiologie.",
+          ],
+        reponse:[
+          "Sourire réponse à 35 jours",
+          "Tenue de la tête à 2 mois et demi",
+          "Position assise avec appui à 6 mois",
+          "Préhension (+)",
+          "Babillage depuis 1 mois",]
+      },
+      {
+        label:"Vérifier la prise de vitamine D",
+        justification : ["La prophylaxie par la vitamine D est correcte.",
+          "En l’absence ou en cas d’irrégularité de prise de vitamine D, un rachitisme doit être suspecté et une calcémie doit être prélevée à la recherche d’une hypocalcémie",
+          ],
+        reponse:[
+          "A pris du sterogyl® 3  gouttes par jour jusqu’à l’âge de 6 mois",
+          "À 6mois a pris une dose de vitamine D3: 200000U pers os",
+        ],
+      },
+      {
+        label:"Vérifier si Lina a eu un traumatisme récent",
+        justification : ["La présence de fièvre ne doit pas faire éliminer les causes occasionnelles de convulsion telle qu’un traumatisme crânien.",
+          "En cas de crise atypique, si une histoire de traumatisme crânien est retrouvée, une imagerie cérébrale (scanner++) serait justifiée.",
+          ],
+        reponse:["Lina est gardée par sa mère", "Pas de notion de traumatisme récent"],
+      },
+      {
+        label:"Rechercher la présence de médicaments ou de toxiques à portée",
+        justification : ["La prise de toxiques doit être recherchée d’autant plus que Lina reste somnolente",
+          "Certains toxiques nécessitent un traitement spécifique",
+          ],
+        reponse:[
+          "Lina est gardée par sa mère",
+          "Pas de médicaments ou de toxiques à sa portée",
+        ],
+      },
+      {
+        label:"Mesurer la pression artérielle ",
+        justification : ["La pression artérielle est normale pour l’âge",
+          "Devant des convulsions même fébriles la pression artérielle doit être vérifiée car une la convulsion peut être causée par une hypertension artérielle nécessitant un traitement urgent"
+          ],
+        reponse:["Pression artérielle 90/55 mmHg"],
+      },
+      {
+        label:"Demander un examen du fond d’œil",
+        justification : ["Le fond d’œil n’a aucun intérêt car d’une part Lina n’a pas de signes neurologiques pouvant faire évoquer une hypertension intracrânienne d’autre part le fond n’a plus d’indication pour le diagnostic d’HTIC en cas de doute un scanner cérébral serait plus approprié."],
+        reponse:["Refusé par l’ophtalmologue de garde."],
+      },
+      {
+        label:"Faire une otoscopie",
+        justification : ["L’examen des tympans est systématique chez tout nourrisson fébrile",
+          "Lina a une otite congestive qui ne nécessite pas de traitement antibiotique"
+          ],
+        reponse:["Tympans complets légèrement congestifs"],
+      },
+      {
+        label:"Faire un examen des urines à la bandelette réactive Multistix®",
+        justification : ["La bandelette urinaire a deux intérêts:",
+        "1. Rechercher des anomalies en faveur d’une infection urinaire chez cette enfant fébrile sous antibiotique",
+        "2. Rechercher des signes en faveur d’un syndrome hémolytique et urémique ou une autre pathologie rénale pourvoyeuse d’HTA."
+      ],
+        reponse:["Urines limpides/ pH:5", "Densité Urinaire: 1015/ A,G,P,H,L,N: (-)"],
+      },
+      {
+        label:"Faire une glycémie au doigt",
+        justification : ["Lina a convulsé à deux reprises et elle reste somnolente, la glycémie capillaire permet de dépister une éventuelle hypoglycémie nécessitant un traitement urgent."],
+        reponse:["Glycémie au doigt: 0,76g/l"],
+      },
+      {
+        label:"Demander une calcémie",
+        justification : ["La calcémie n’est pas indiquée devant une convulsion fébrile sans signes évocateurs ou pathologie pourvoyeuse d’hypocalcémie",
+          "La prophylaxie par la vitamine D est correcte",
+          "Il n’y a pas de signes cliniques en faveur de rachitisme",
+          "Il n’y a pas d’autres signes évocateurs d’hypocalcémie"
+          ],
+        reponse:["Non faite car non indiquée"],
+      },
+      {
+        label:"Demander une numération formule sanguine",
+        justification : [
+          "Pas de pâleur",
+          "Pas de purpura",
+          "Pas de signes infectieux sévères.",
+          
+        ],
+        reponse:["Non faite CAR non indiquée"],
+      },
+      {
+        label:"Prélever une hémoculture",
+        justification : [
+          "Il n’est pas recommandé de réaliser une hémoculture de routine après une convulsion fébrile typique.",
+          "Il n’y a pas de signes de gravité faisant évoquer une bactériémie",
+          
+        ],
+        reponse:["Non faite car non indiquée"],
+      },
+      {
+        label:"Demander un ionogramme sanguin",
+        justification : [
+          "Il n’est pas recommandé de réaliser un ionogramme systématiquement devant convulsion fébrile",
+          "Lina n’a pas de troubles de l’hydratation ni de signes digestifs (vomissements, diarrhée) pourvoyeurs de troubles électrolytique",
+          
+        ],
+        reponse:["Non fait car non indiqué"],
+      },
+      {
+        label:"Réaliser une ponction lombaire",
+        justification : [
+          "La ponction lombaire était indiquée chez Lina devant l’association de ces éléments:",
+          "Age > 1an",
+          "Vaccination incomplète (HiB) et pas de vaccination par le pneumocoque",
+          "Prise préalable d’antibiotique (pouvant abatardir le tableau de méningite bactérienne)",
+         
+        ],
+        reponse:[
+          "Liquide eau de roche normotendu",
+          "Globules rouges 2 élém/mm3, GB: 1 élém/mm3",
+          "Glucorrachie: 0,45 g/l; Albuminorrachie: 0,1g/l",
+          "Examen direct: négatif"],
+      },
+      {
+        label:"Pratiquer une radiographie du  thorax au lit ",
+        justification : ["Il n’y a pas d’anomalie à l’examen pulmonaire"],
+        reponse:["Non faite car non indiquée",]
+      },
+      {
+        label:"Demander un rendez-vous proche d’électroencéphalogramme  (dans les 48H)",
+        justification : [
+          "L’EEG n’est pas recommandé dans les cas de convulsion fébrile typique. ",
+          `Chez Lina la convulsion est atypique/ complexe  car elle a récidivé dans les 24H 
+          ➔ L’EEG peut être envisagé chez elle. Mais cet EEG devrait idéalement être fait au moins 7 jours après la convulsion fébrile atypique.`,
+          "Un EEG fait de façon précoce peut montrer des anomalies non spécifiques",
+        ],
+        reponse:["Rendez-vous pris dans 15 jours"],
+      },
+      {
+        label:"Demander une échographie transfontanellaire",
+        justification : [
+          "L’imagerie cérébrale n’est pas indiquée systématiquement devant un enfant avec ",
+          "une convulsion fébrile typique. ",
+          "L’imagerie cérébrale n’est pas indiquée systématiquement devant un enfant ayant présenté une première convulsion fébrile atypique.",
+          " Elle peut être envisagée chez les enfants ayant présenté une convulsion fébrile focale ou avec plusieurs caractéristiques atypiques, selon le jugement clinique. ",
+          
+        ],
+        reponse:["Refusée par le radiologue de garde car non indiquée"],
+      },
+      {
+        label:"Demander des transaminases",
+        justification : [
+          "Lina a une crise atypique/complexe",
+          "Un traitement préventif par valproate va être prescrit",
+          "Ce traitement peut avoir une toxicité hépatique",
+          "Les transaminases faites avant le début du traitement permettrait d’éliminer une hépatopathie préexistante qui est une contre indication au valproate.",
+        ],
+        reponse:[
+          "ASAT: 39U/l",
+          "ALAT:22U/L",
+        ],
+      },
+      {
+        label:"Prescrire du paracétamol sirop dose de poids 4 fois par jour",
+        justification : ["Le  traitement de la fièvre est essentiel en cas de convulsion fébrile pour abaisser la température et éviter la récidive des convulsions"],
+        reponse:["Paracétamol donné", "Température contrôlée à 38,2° après 1 H"],
+      },
+      {
+        label:"Donner du valium®: 0,5 mg/Kg en intra-rectal",
+        justification : ["Un traitement pharmacologique peut être envisagé chez le patient dont la convulsion fébrile dure plus de 5 minutes."],
+        reponse:["Non donné", "Lina n’est pas en train de convulser"],
+      },
+      {
+        label:"Prescrire un bolus de phenobarbital (Gardenal®): 20 mg/Kg en IL lente",
+        justification : [
+          "Le phenobarbital IV comporte un risque de dépression respiratoire ",
+          "Il ne doit être prescrit qu’en cas d’état de mal épileptique.",
+          
+        ],
+        reponse:["Inutile", "Il ne s’agit pas d’un état de mal convulsif"],
+      },
+      {
+        label:"Prescrire du valium® gouttes 0,5 mg/Kg/j tant que persiste la fièvre",
+        justification : [
+          "Le valium n’est utile que lors des convulsions",
+          "Il n’y a pas de recommandation quant à l’intérêt de la forme orale du diazepam dans le traitement des convulsions fébriles",
+          
+        ],
+        reponse:["Non donné car inutile"],
+      },
+      {
+        label:"Prescrire du valproate (Depakine®) sirop  30mg/Kg/j ",
+        justification : [
+          "Lina a présenté une crise atypique (récidive dans les 24h)➔ un traitement anticonvulsivant prophylactique est indiqué.",
+          "Le valproate a moins d’effets indésirables que le phenobarbital",
+          "Le traitement intermittent par benzodiazepines en intrarectal (diazepam)ou per os (midazolam) ne sont pas encore disponibles en Tunisie",
+          
+        ],
+        reponse:["Depakine® commencée ce jour", "Ordonnance faite pour 3 mois"],
+      },
+      {
+        label:"Rassurer les parents et laisser partir Lina ",
+        justification : [],
+        reponse:["L’enfant refait des pics de fièvre à 40°C et reconvulse chez lui", "Il est ramené aux urgences après 4 heures"],
       },
     ];
     correction.testId = $state.params.test;

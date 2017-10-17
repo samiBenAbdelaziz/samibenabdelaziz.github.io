@@ -7,7 +7,7 @@
     <button ng-click="ctrl.showTest(1)" class="btn btn-primary">PMP gastroentérite</button>
     <button ng-click="ctrl.showTest(2)" class="btn btn-primary">PMP détresse néonatale</button>
     <button ng-click="ctrl.showTest(3)" class="btn btn-primary">PMP fièvre prolongée</button>
-    <!-- <button id="authorize-button" ng-click="ctrl.handleAuthClick()" class="btn btn-primary">Authorize</button> -->
+    <button ng-click="ctrl.showTest(4)" class="btn btn-primary">PMP convulsion</button>
   </div>
 </div>
 <div id="first" ng-if="ctrl.firstSelected">
@@ -242,6 +242,66 @@
       <ul>
         <li ng-repeat="item in ctrl.list3">
           <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list3')">{{item.label}}</a>
+        </li>
+        </ul>
+    </div>
+    <div style="width:50%;float:left">
+      <div>
+        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+      </div>
+      <div ng-show="ctrl.showResult">
+        <h2>SCORE FINAL</h2>
+        <h2>{{ctrl.score}}</h2>
+        <h2>NOTE</h2>
+        <h2>{{ctrl.note}}/20</h2>
+      </div>
+    </div>
+    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+  </div>
+</div>
+<div id="forth" ng-if="ctrl.forthSelected">
+  <div class="container">
+    <p>Lina âgée de 7 mois, est amenée aux urgences pour des convulsions survenues il y a une heure à domicile ayant cédé spontanément au bout de 1 à 2 minutes. À son entrée à la salle des urgences elle présente une deuxième crise convulsive à type d’hypertonie des 4 membres avec révulsion des globes oculaires qui cède au bout de 30 secondes. La mère dit que sa fille n’avait aucune maladie auparavant mais qu’elle était traitée par de l’amoxicilline depuis deux jours pour une angine diagnostiquée au dispensaire.
+      <br>
+      À l’examen, Lina est somnolente. Température:39°C, rhinorrhée claire, pharyngite.
+      <br>
+      Examen neurologique normal, fontanelle normotendue.
+      <br>
+      Examen cardiopulmonaire normale</p>
+    <h1>INSTRUCTIONS</h1>
+    <h3>Quelle est votre conduite à tenir?</h3>
+    <div>
+      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
+    </div>
+    <div>
+      <p>L’échelle de cotation est la suivante :</p>
+      <ul>
+        <li>
+          (-2) choix dangereux ou inutilement couteux
+        </li>
+        <li>
+          (-1) choix non dangereux mais inutile
+        </li>
+        <li>
+          (0) choix indifférent
+        </li>
+        <li>
+          (+1) choix utile
+        </li>
+        <li>
+          (+2) choix essentiel
+        </li>
+      </ul>
+    </div>
+    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
+  </div>
+
+  <div class="container">
+    <div style="width:50%;float:left">
+      <ul>
+        <li ng-repeat="item in ctrl.list4">
+          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list4')">{{item.label}}</a>
         </li>
         </ul>
     </div>
