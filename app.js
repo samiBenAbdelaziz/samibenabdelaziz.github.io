@@ -668,6 +668,7 @@
       }
       return ((ctrl.score - ctrl.negScore) / (total - totalNeg)) * 20;
     }
+    
 
     ctrl.fin = function(){
       console.log(getNote(ctrl.selectedTestId));
