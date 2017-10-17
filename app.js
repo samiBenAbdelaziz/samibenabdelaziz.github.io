@@ -658,6 +658,13 @@
             }
           });
           break;
+        case 4:
+          ctrl.list4.forEach(function(element) {
+            if (element.note < 0){
+              totalNeg += element.note;
+            }
+          });
+          break;
       }
       return ((ctrl.score - ctrl.negScore) / (total - totalNeg)) * 20;
     }
