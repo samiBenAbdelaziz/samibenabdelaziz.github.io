@@ -1,324 +1,134 @@
-<div class="container" ng-hide="ctrl.selectedTest">
-  <div style="display: inline;margin: auto">
-    <h3>Saisissez votre nom:</h3>
-    <input type="text" ng-model="ctrl.candidate">
-    <p class="red" ng-show="ctrl.noname">Entrez votre nom d'abord</p>
-    <h3>Choisissez un cas</h3>
-    <button ng-click="ctrl.showTest(1)" class="btn btn-primary">PMP gastroentérite</button>
-    <button ng-click="ctrl.showTest(2)" class="btn btn-primary">PMP détresse néonatale</button>
-    <button ng-click="ctrl.showTest(3)" class="btn btn-primary">PMP fièvre prolongée</button>
-    <button ng-click="ctrl.showTest(4)" class="btn btn-primary">PMP convulsion</button>
+<div id="objectif" class="container" style="margin-bottom: 20px">
+  <div style="position:fixed; width:inherit; background:#eee;top:0px;height:50px;text-align: center;padding: 10px;z-index:1">
+    <p>Merci de donner votre avis <a href="https://docs.google.com/forms/d/1tl1IOAlZbhhkmzHfrsIzOR2HBe4DocUjvpVR7SnLR6k/prefill" target="_blank">ici</a></p>
   </div>
-</div>
-<div id="first" ng-if="ctrl.firstSelected">
-  <div class="container">
-    <p>Salma âgée de 6 mois et demi est amenée aux urgences pour diarrhée liquidienne et vomissements depuis 3 jours. Elle pesait 7 Kg il ya une semaine (lors du vaccin). Elle est allaitée au sein , la diversification a été commencée à 6 mois. À noter que sa sœur avait les mêmes symptômes il ya quelques jours.</p>
-
-    À l’examen: poids: 6,5 Kg
+  <div ng-if="correction.testId == 1">
+    <h3>Public cible:</h3>
+    <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
+    <h3>Prérequis:</h3>
     <ul>
       <li>
-      Éveillée, asthénique, Température: 38,9°C
+        cours déshydratation aigue (DCEM2)
       </li>
       <li>
-      Pli cutané paresseux
+        Cours diarrhée aigue (DCEM2)
       </li>
-      <li>
-      Fontanelle antérieure légèrement  déprimée
-      </li>
-      <li>
-      Fréquence respiratoire: 46 cycles/minute, râles ronflants.
-      </li>
-      <li>
-      Cernes oculaires
-      </li>
-      <li>
-      Fréquence cardiaque: 110 bpm, TRC< 3 sec
-      </li>
-      <li>
-      Muqueuses humides
-      </li>
-      <li>
-      Rhinorrhée claire, tympans congestifs
-      </li>
-      <li>
-      Bandelettes urinaires: pH: 5, P, H,L, N, G (-), A (+) densité: 1030 
-      </li>
-      <li>
-      Érythème fessier
-      </li>
-      <li>
-      Le reste de l’examen est sans particularité
-      </li>
-
     </ul>
-    <h1>INSTRUCTIONS</h1>
-    <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
-    <div>
-      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
-    </div>
-    <div>
-      <p>L’échelle de cotation est la suivante :</p>
-      <ul>
-        <li>
-          (-2) choix dangereux ou inutilement couteux
-        </li>
-        <li>
-          (-1) choix non dangereux mais inutile
-        </li>
-        <li>
-          (0) choix indifférent
-        </li>
-        <li>
-          (+1) choix utile
-        </li>
-        <li>
-          (+2) choix essentiel
-        </li>
-      </ul>
-    </div>
-    <p>Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
-  </div>
-
-  <div class="container">
-    <div style="width:50%;float:left">
-      <ul>
-        <li ng-repeat="item in ctrl.list">
-          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list')">{{item.label}}</a>
-        </li>
-        </ul>
-    </div>
-    <div style="width:50%;float:left">
-      <div>
-        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
-      </div>
-      <div ng-show="ctrl.showResult">
-        <h2>SCORE FINAL</h2>
-        <h2>{{ctrl.score}}</h2>
-        <h2>NOTE</h2>
-        <h2>{{ctrl.note}}/20</h2>
-      </div>
-    </div>
-    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
-  </div> 
-</div>
-<div id="second" ng-if="ctrl.secondSelected">
-  <div class="container">
-    <p>Anas, âgé de 4 jours est admis pour refus de téter apparu depuis 24 heures. Ses parents sont cousins. Il n’a pas d’antécédents familiaux particuliers. La grossesse était normale. Pas d’anamnèse infectieuse. L’accouchement était à terme, par voie basse, Apgar 8/10. PN: 3000g. L’examen avant la sortie de maternité était normal.</p>
-
-    A l’examen ce jour: ° température: 37°C
+    <h3>Objectifs éducationnels:</h3>
+    <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
     <ul>
       <li>
-      Fréquence respiratoire à 70 c/mn, score de Silverman à 5, SpO2: 87%
+        Poser le diagnostic de déshydratation aigue du nourrisson
       </li>
       <li>
-      Fréquence cardiaque 130/mn, TRC=2 ’’
+        Évaluer le stade de déshydratation du nourrisson en sa basant sur des éléments cliniques
       </li>
       <li>
-      NN comateux, hypotonie généralisée, FA normotendue, réflexes archaiques absents
-      </li>
-      <li>
-      Pas d’HMG, Glycémie au talon: 0,3 g/l
+        Planifier la prise en charge d’une déshydratation aigue par gastroentérite du nourrisson en fonction de son stade
       </li>
     </ul>
-    <h1>INSTRUCTIONS</h1>
-    <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
-    <div>
-      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
-    </div>
-    <div>
-      <p>L’échelle de cotation est la suivante :</p>
-      <ul>
-        <li>
-          (-2) choix dangereux ou inutilement couteux
-        </li>
-        <li>
-          (-1) choix non dangereux mais inutile
-        </li>
-        <li>
-          (0) choix indifférent
-        </li>
-        <li>
-          (+1) choix utile
-        </li>
-        <li>
-          (+2) choix essentiel
-        </li>
-      </ul>
-    </div>
-    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
   </div>
-
-  <div class="container">
-    <div style="width:50%;float:left">
-      <ul>
-        <li ng-repeat="item in ctrl.list2">
-          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list2')">{{item.label}}</a>
-        </li>
-        </ul>
-    </div>
-    <div style="width:50%;float:left">
-      <div>
-        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
-      </div>
-      <div ng-show="ctrl.showResult">
-        <h2>SCORE FINAL</h2>
-        <h2>{{ctrl.score}}</h2>
-        <h2>NOTE</h2>
-        <h2>{{ctrl.note}}/20</h2>
-      </div>
-    </div>
-    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
-  </div>
-</div>
-<div id="third" ng-if="ctrl.thirdSelected">
-  <div class="container">
-    <p>Hazem, âgé de 4 ans présente depuis  3 semaines une fièvre à 38 - 39°C, une altération de l’état général avec arthralgies des genoux et chevilles. </p>
-
-    A l’examen:
+  <div ng-if="correction.testId == 2">
+    <h3>Public cible:</h3>
+    <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
+    <h3>Prérequis:</h3>
     <ul>
       <li>
-        Poids= 14 Kg (poids il ya 2 mois: 15Kg)
+        Cours urgences métaboliques (DCEM2)
       </li>
       <li>
-        Température  à 38,7, Pâleur cutanéo-muqueuse
-      </li>
-      <li>
-        Purpura pétéchial du tronc et des membres inférieurs
-      </li>
-      <li>
-        Flèche hépatique=7cm, Flèche splénique à 5 cm
-      </li>
-      <li>
-          F. respiratoire: 24c/mn, Auscultation cardio-pulmonaire normale
-      </li>
-      <li>
-          FC=110/mn, TA= 10/5
-      </li>
-      <li>
-        Examen neurologique normal
-      </li>
-      <li>
-        Labstix: pH=6 le reste est négatif
-      </li>
-      <li>
-        douleur à la pression des deux jambes, articulations libres.
-      </li>
-      <li>
-        Pas d’adénopathies palpables
+        Cours détresse respiratoire néonatale (DCEM2)
       </li>
     </ul>
-    <h1>INSTRUCTIONS</h1>
-    <h3>Quelle est votre conduite à tenir?</h3>
-    <div>
-      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
-    </div>
-    <div>
-      <p>L’échelle de cotation est la suivante :</p>
+    <h3>Objectifs éducationnels:</h3>
+    <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
+    <ul>
+      <li>
+        Poser le diagnostic d’une détresse néonatale sur des arguments cliniques
+      </li>
+      <li>
+        Évaluer le stade de déshydratation du nourrisson en sa basant sur des éléments cliniques
+      </li>
+      <li>
+        Planifier la prise en charge d’un nouveau-né en détresse
+      </li>
+    </ul>
+  </div>
+  <div ng-if="correction.testId == 3">
+    <h3>Public cible:</h3>
+    <p>étudiants en médecine 4 ème année de médecine en pédiatrie, internes en médecine, résidents de médecine de famille.</p>
+    <h3>Prérequis:</h3>
+    <ul>
+      <li>
+        Cours fièvre de l’enfant (DCEM2)
+      </li>
+      <li>
+        Cours purpura (DCEM2)
+      </li>
+    </ul>
+    <h3>Objectifs éducationnels:</h3>
+    <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
+    <ul>
+      <li>
+        Évoquer le diagnostic d’une hémopathie maligne en se basant sur les éléments cliniques
+      </li>
+      <li>
+        Prescrire les examens complémentaires afin de confirmer une hémopathie maligne
+      </li>
+      <li>
+        Évaluer le pronostic immédiat chez un enfant suspect d’une hémopathie maligne
+      </li>
+      <li>
+        Planifier la prise en charge thérapeutique immédiate chez un enfant suspect d’hémopathie maligne
+      </li>
+    </ul>
+  </div>
+  <div ng-if="correction.testId == 4">
+      <h3>Public cible:</h3>
+      <p>étudiants en médecine 4 ème année de médecine en pédiatrie, internes en médecine, résidents de médecine de famille.</p>
+      <h3>Prérequis:</h3>
       <ul>
         <li>
-          (-2) choix dangereux ou inutilement couteux
+          Cours convulsions épilepsies (DCEM2)
         </li>
         <li>
-          (-1) choix non dangereux mais inutile
+          Cours purpura (DCEM2)
+        </li>
+      </ul>
+      <h3>Objectifs éducationnels:</h3>
+      <p>À l’issue de cet apprentissage, l’étudiant sera capable de:</p>
+      <ul>
+        <li>
+          Réunir les éléments cliniques nécessaires pour le diagnostic étiologique d’une convulsion fébrile du nourrisson.
         </li>
         <li>
-          (0) choix indifférent
+          Planifier les explorations à visée étiologique d’une convulsion fébrile du nourrisson en se limitant aux explorations essentielles compte tenu des données cliniques.            
         </li>
         <li>
-          (+1) choix utile
+          Classer la convulsion fébrile en typique ou atypique en se basant sur les éléments cliniques. 
         </li>
         <li>
-          (+2) choix essentiel
+          Planifier la prise en charge thérapeutique immédiate et à moyen terme d’un nourrisson ayant une convulsion fébrile.
         </li>
       </ul>
     </div>
-    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
-  </div>
-
-  <div class="container">
-    <div style="width:50%;float:left">
-      <ul>
-        <li ng-repeat="item in ctrl.list3">
-          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list3')">{{item.label}}</a>
-        </li>
-        </ul>
+  <h1>CORRECTION DETAILLÉE</h1>
+  <div class="col-md-12" ng-repeat="item in correction.selectedList">
+    <div class="col-md-6" style="margin: 10px 0">
+      <h4>Proposition</h4>
     </div>
-    <div style="width:50%;float:left">
-      <div>
-        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
-      </div>
-      <div ng-show="ctrl.showResult">
-        <h2>SCORE FINAL</h2>
-        <h2>{{ctrl.score}}</h2>
-        <h2>NOTE</h2>
-        <h2>{{ctrl.note}}/20</h2>
-      </div>
+    <div class="col-md-6" style="border-left: 2px solid #aaa; margin: 10px 0">
+      <h4>Réponse</h4>
     </div>
-    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+    <div class="col-md-6" style="margin: 10px 0;">{{item.label}}</div>
+    <div class="col-md-6" style="border-left: 2px solid #aaa; ">
+      <div class="col-md-12" ng-repeat="reponse in item.reponse">{{reponse}}</div>
+    </div>
+    <div class="col-md-12">
+      <h4 style="text-align: left">Détails:</h4>
+    </div>
+    <div class="col-md-12" ng-repeat="justification in item.justification">{{justification}}</div>
+    <hr class="col-md-12">
   </div>
+  <div style="text-align:center"><button ng-click="correction.reset()" style="margin:auto">DÉBUT</button></div>
 </div>
-<div id="forth" ng-if="ctrl.forthSelected">
-  <div class="container">
-    <p>Lina âgée de 7 mois, est amenée aux urgences pour des convulsions survenues il y a une heure à domicile ayant cédé spontanément au bout de 1 à 2 minutes. À son entrée à la salle des urgences elle présente une deuxième crise convulsive à type d’hypertonie des 4 membres avec révulsion des globes oculaires qui cède au bout de 30 secondes. La mère dit que sa fille n’avait aucune maladie auparavant mais qu’elle était traitée par de l’amoxicilline depuis deux jours pour une angine diagnostiquée au dispensaire.
-      <br>
-      À l’examen, Lina est somnolente. Température:39°C, rhinorrhée claire, pharyngite.
-      <br>
-      Examen neurologique normal, fontanelle normotendue.
-      <br>
-      Examen cardiopulmonaire normale</p>
-    <h1>INSTRUCTIONS</h1>
-    <h3>Quelle est votre conduite à tenir?</h3>
-    <div>
-      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
-    </div>
-    <div>
-      <p>L’échelle de cotation est la suivante :</p>
-      <ul>
-        <li>
-          (-2) choix dangereux ou inutilement couteux
-        </li>
-        <li>
-          (-1) choix non dangereux mais inutile
-        </li>
-        <li>
-          (0) choix indifférent
-        </li>
-        <li>
-          (+1) choix utile
-        </li>
-        <li>
-          (+2) choix essentiel
-        </li>
-      </ul>
-    </div>
-    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
-  </div>
-
-  <div class="container">
-    <div style="width:50%;float:left">
-      <ul>
-        <li ng-repeat="item in ctrl.list4">
-          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list4')">{{item.label}}</a>
-        </li>
-        </ul>
-    </div>
-    <div style="width:50%;float:left">
-      <div>
-        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
-      </div>
-      <div ng-show="ctrl.showResult">
-        <h2>SCORE FINAL</h2>
-        <h2>{{ctrl.score}}</h2>
-        <h2>NOTE</h2>
-        <h2>{{ctrl.note}}/20</h2>
-      </div>
-    </div>
-    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
-  </div>
-</div>
-<!-- <div ng-click="ctrl.recap()"><a>lien</a></div> -->
-<ui-view></ui-view>
