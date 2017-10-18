@@ -1,5 +1,5 @@
 <div class="container" ng-hide="ctrl.selectedTest">
-  <div style="display: inline;margin: auto">
+  <div class='home'>
     <h3>Saisissez votre nom:</h3>
     <input type="text" ng-model="ctrl.candidate">
     <p class="red" ng-show="ctrl.noname">Entrez votre nom d'abord</p>
@@ -11,7 +11,7 @@
   </div>
 </div>
 <div id="first" ng-if="ctrl.firstSelected">
-  <div class="container">
+  <div class="container case">
     <p>Salma âgée de 6 mois et demi est amenée aux urgences pour diarrhée liquidienne et vomissements depuis 3 jours. Elle pesait 7 Kg il ya une semaine (lors du vaccin). Elle est allaitée au sein , la diversification a été commencée à 6 mois. À noter que sa sœur avait les mêmes symptômes il ya quelques jours.</p>
 
     À l’examen: poids: 6,5 Kg
@@ -49,78 +49,8 @@
       <li>
       Le reste de l’examen est sans particularité
       </li>
-
     </ul>
-    <h1>INSTRUCTIONS</h1>
-    <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
-    <div>
-      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
-    </div>
-    <div>
-      <p>L’échelle de cotation est la suivante :</p>
-      <ul>
-        <li>
-          (-2) choix dangereux ou inutilement couteux
-        </li>
-        <li>
-          (-1) choix non dangereux mais inutile
-        </li>
-        <li>
-          (0) choix indifférent
-        </li>
-        <li>
-          (+1) choix utile
-        </li>
-        <li>
-          (+2) choix essentiel
-        </li>
-      </ul>
-    </div>
-    <p>Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
-  </div>
-
-  <div class="container">
-    <div style="width:50%;float:left">
-      <ul>
-        <li ng-repeat="item in ctrl.list">
-          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list')">{{item.label}}</a>
-        </li>
-        </ul>
-    </div>
-    <div style="width:50%;float:left">
-      <div>
-        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
-      </div>
-      <div ng-show="ctrl.showResult">
-        <h2>SCORE FINAL</h2>
-        <h2>{{ctrl.score}}</h2>
-        <h2>NOTE</h2>
-        <h2>{{ctrl.note}}/20</h2>
-      </div>
-    </div>
-    <div style="width:100%;float: left;text-align: center;margin: 50px"><button style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
-  </div> 
-</div>
-<div id="second" ng-if="ctrl.secondSelected">
-  <div class="container">
-    <p>Anas, âgé de 4 jours est admis pour refus de téter apparu depuis 24 heures. Ses parents sont cousins. Il n’a pas d’antécédents familiaux particuliers. La grossesse était normale. Pas d’anamnèse infectieuse. L’accouchement était à terme, par voie basse, Apgar 8/10. PN: 3000g. L’examen avant la sortie de maternité était normal.</p>
-
-    A l’examen ce jour: ° température: 37°C
-    <ul>
-      <li>
-      Fréquence respiratoire à 70 c/mn, score de Silverman à 5, SpO2: 87%
-      </li>
-      <li>
-      Fréquence cardiaque 130/mn, TRC=2 ’’
-      </li>
-      <li>
-      NN comateux, hypotonie généralisée, FA normotendue, réflexes archaiques absents
-      </li>
-      <li>
-      Pas d’HMG, Glycémie au talon: 0,3 g/l
-      </li>
-    </ul>
+    <hr>
     <h1>INSTRUCTIONS</h1>
     <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
     <div>
@@ -148,6 +78,79 @@
     </div>
     <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
   </div>
+  <hr>
+
+  <div class="container">
+    <div style="width:50%;float:left">
+      <ul>
+        <li ng-repeat="item in ctrl.list">
+          <a ng-class="{disabled: item.clicked}" ng-click="ctrl.select(item,'list')">{{item.label}}</a>
+        </li>
+        </ul>
+    </div>
+    <div style="width:50%;float:left">
+      <div>
+        <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>Vous recevez {{ctrl.selectedItem.note}}</h4></div>
+      </div>
+      <div ng-show="ctrl.showResult">
+        <h2>SCORE FINAL</h2>
+        <h2>{{ctrl.score}}</h2>
+        <h2>NOTE</h2>
+        <h2>{{ctrl.note}}/20</h2>
+      </div>
+    </div>
+    <div style="width:100%;float: left;text-align: center;margin: 50px"><button class="btn btn-primary" style="width:100px" ng-click="ctrl.fin()">FIN</button></div>
+  </div> 
+</div>
+<div id="second" ng-if="ctrl.secondSelected">
+  <div class="container case">
+    <p>Anas, âgé de 4 jours est admis pour refus de téter apparu depuis 24 heures. Ses parents sont cousins. Il n’a pas d’antécédents familiaux particuliers. La grossesse était normale. Pas d’anamnèse infectieuse. L’accouchement était à terme, par voie basse, Apgar 8/10. PN: 3000g. L’examen avant la sortie de maternité était normal.</p>
+
+    A l’examen ce jour: ° température: 37°C
+    <ul>
+      <li>
+      Fréquence respiratoire à 70 c/mn, score de Silverman à 5, SpO2: 87%
+      </li>
+      <li>
+      Fréquence cardiaque 130/mn, TRC=2 ’’
+      </li>
+      <li>
+      NN comateux, hypotonie généralisée, FA normotendue, réflexes archaiques absents
+      </li>
+      <li>
+      Pas d’HMG, Glycémie au talon: 0,3 g/l
+      </li>
+    </ul>
+    <hr>
+    <h1>INSTRUCTIONS</h1>
+    <h3>Quelle est votre conduite à tenir diagnostique et thérapeutique?</h3>
+    <div>
+      Faites vos choix parmi les propositions suivantes, dans l’ordre qui vous paraît le plus approprié et cliquez sur le lien correspondant.
+    </div>
+    <div>
+      <p>L’échelle de cotation est la suivante :</p>
+      <ul>
+        <li>
+          (-2) choix dangereux ou inutilement couteux
+        </li>
+        <li>
+          (-1) choix non dangereux mais inutile
+        </li>
+        <li>
+          (0) choix indifférent
+        </li>
+        <li>
+          (+1) choix utile
+        </li>
+        <li>
+          (+2) choix essentiel
+        </li>
+      </ul>
+    </div>
+    <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
+  </div>
+  <hr>
 
   <div class="container">
     <div style="width:50%;float:left">
@@ -160,7 +163,7 @@
     <div style="width:50%;float:left">
       <div>
         <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>Vous recevez {{ctrl.selectedItem.note}}</h4></div>
       </div>
       <div ng-show="ctrl.showResult">
         <h2>SCORE FINAL</h2>
@@ -173,7 +176,7 @@
   </div>
 </div>
 <div id="third" ng-if="ctrl.thirdSelected">
-  <div class="container">
+  <div class="container case">
     <p>Hazem, âgé de 4 ans présente depuis  3 semaines une fièvre à 38 - 39°C, une altération de l’état général avec arthralgies des genoux et chevilles. </p>
 
     A l’examen:
@@ -209,6 +212,7 @@
         Pas d’adénopathies palpables
       </li>
     </ul>
+    <hr>
     <h1>INSTRUCTIONS</h1>
     <h3>Quelle est votre conduite à tenir?</h3>
     <div>
@@ -236,6 +240,7 @@
     </div>
     <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
   </div>
+  <hr>
 
   <div class="container">
     <div style="width:50%;float:left">
@@ -248,7 +253,7 @@
     <div style="width:50%;float:left">
       <div>
         <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>Vous recevez {{ctrl.selectedItem.note}}</h4></div>
       </div>
       <div ng-show="ctrl.showResult">
         <h2>SCORE FINAL</h2>
@@ -261,7 +266,7 @@
   </div>
 </div>
 <div id="forth" ng-if="ctrl.forthSelected">
-  <div class="container">
+  <div class="container case">
     <p>Lina âgée de 7 mois, est amenée aux urgences pour des convulsions survenues il y a une heure à domicile ayant cédé spontanément au bout de 1 à 2 minutes. À son entrée à la salle des urgences elle présente une deuxième crise convulsive à type d’hypertonie des 4 membres avec révulsion des globes oculaires qui cède au bout de 30 secondes. La mère dit que sa fille n’avait aucune maladie auparavant mais qu’elle était traitée par de l’amoxicilline depuis deux jours pour une angine diagnostiquée au dispensaire.
       <br>
       À l’examen, Lina est somnolente. Température:39°C, rhinorrhée claire, pharyngite.
@@ -269,6 +274,7 @@
       Examen neurologique normal, fontanelle normotendue.
       <br>
       Examen cardiopulmonaire normale</p>
+      <hr>
     <h1>INSTRUCTIONS</h1>
     <h3>Quelle est votre conduite à tenir?</h3>
     <div>
@@ -296,6 +302,7 @@
     </div>
     <p class="red">Toute décision mettant en jeu le pronostic vital  du malade fera arrêter l’épreuve</p>
   </div>
+  <hr>
 
   <div class="container">
     <div style="width:50%;float:left">
@@ -308,7 +315,7 @@
     <div style="width:50%;float:left">
       <div>
         <div ng-repeat="reponse in ctrl.selectedItem.reponse"><h4>{{reponse}}</h4></div>
-        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>{{ctrl.selectedItem.note}}</h4></div>
+        <div ng-class="{green: ctrl.selectedItem.note>0, red:ctrl.selectedItem.note<0}"><h4>Vous recevez {{ctrl.selectedItem.note}}</h4></div>
       </div>
       <div ng-show="ctrl.showResult">
         <h2>SCORE FINAL</h2>

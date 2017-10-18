@@ -1,4 +1,7 @@
 <div id="objectif" class="container" style="margin-bottom: 20px">
+  <div style="position:fixed; width:inherit; background:#eee;top:0px;height:50px;text-align: center;padding: 10px;">
+    <p>Merci de donner votre avis <a href="https://docs.google.com/forms/d/1tl1IOAlZbhhkmzHfrsIzOR2HBe4DocUjvpVR7SnLR6k/prefill" target="_blank">ici</a></p>
+  </div>
   <div ng-if="correction.testId == 1">
     <h3>Public cible:</h3>
     <p>étudiants en médecine 4ème année de médecine en pédiatrie, internes en médecine.</p>
@@ -80,7 +83,7 @@
       </li>
     </ul>
   </div>
-  <div ng-if="correction.testId == 3">
+  <div ng-if="correction.testId == 4">
       <h3>Public cible:</h3>
       <p>étudiants en médecine 4 ème année de médecine en pédiatrie, internes en médecine, résidents de médecine de famille.</p>
       <h3>Prérequis:</h3>
@@ -114,11 +117,11 @@
     <div class="col-md-6" style="margin: 10px 0">
       <h4>Proposition</h4>
     </div>
-    <div class="col-md-6" style="margin: 10px 0">
+    <div class="col-md-6" style="border-left: 2px solid #aaa; margin: 10px 0">
       <h4>Réponse</h4>
     </div>
     <div class="col-md-6" style="margin: 10px 0;">{{item.label}}</div>
-    <div class="col-md-6">
+    <div class="col-md-6" style="border-left: 2px solid #aaa; ">
       <div class="col-md-12" ng-repeat="reponse in item.reponse">{{reponse}}</div>
     </div>
     <div class="col-md-12">
