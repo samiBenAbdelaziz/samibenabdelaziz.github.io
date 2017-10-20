@@ -593,7 +593,7 @@
       if (ctrl.candidate){
         ctrl.noname = false;
         ctrl.candidate = ctrl.candidate.replace(/ /g,'_') + ctrl.selectedTestId;
-        localStorage[ctrl.candidate] = '';
+        // localStorage[ctrl.candidate] = '';
         if (ctrl.selectedTestId === 1){
           ctrl.firstSelected = true;
         }
@@ -622,7 +622,7 @@
         if(item.note<0){
           ctrl.negScore+=item.note;
         }
-        localStorage[ctrl.candidate] = JSON.stringify({ reponse: ctrl[list], note: ctrl.score});
+        // localStorage[ctrl.candidate] = JSON.stringify({ reponse: ctrl[list], note: ctrl.score});
         if (item.note === 0 && item.end){
           ctrl.score = 0;
           ctrl.end = true;
@@ -679,7 +679,7 @@
       ctrl.note = ctrl.end? 0 : getNote(ctrl.selectedTestId);
       ctrl.showResult = true;
       ctrl.end = true;
-      $state.go('home.correction', {test:ctrl.selectedTestId});
+      $state.go('home.correction', {test:ctrl.selectedTestId, note: ctrl.note, score: ctrl.score});
     }
 
     ctrl.recap = function(){
@@ -1485,6 +1485,8 @@
         reponse:["L’enfant refait des pics de fièvre à 40°C et reconvulse chez lui", "Il est ramené aux urgences après 4 heures"],
       },
     ];
+    correction.note = $state.params.note;
+    correction.score = $state.params.score;
     correction.testId = $state.params.test;
     if ($state.params.test == 1){
       correction.selectedList = correction.list;
@@ -1524,9 +1526,9 @@
     }
     recap.listCandidats = {};
     recap.candidats = {};
-    for (var prop in localStorage){
-      recap.listCandidats[prop] = JSON.parse(localStorage[prop]);
-    }
+    // for (var prop in localStorage){
+    //  recap.listCandidats[prop] = JSON.parse(localStorage[prop]);
+    // }
     delete recap.listCandidats.length;
     for (var candidat in recap.listCandidats){
       recap.candidats[candidat] = {reponses: recap.listCandidats[candidat].reponse.filter(function(rep){
